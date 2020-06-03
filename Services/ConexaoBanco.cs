@@ -10,7 +10,7 @@ namespace Services
 {
     public class ConexaoBanco
     {
-        protected SqlConnection con;
+        SqlConnection con = new SqlConnection();
         public ConexaoBanco()
         {
             con.ConnectionString = @"Data Source=TI01\SQLEXPRESS;Initial Catalog=bd_apolice;Integrated Security=True";

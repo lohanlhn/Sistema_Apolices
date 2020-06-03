@@ -13,7 +13,9 @@ namespace Services
         public List<Carro> Listar()
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT id, modelo_id, chassi, placa, renavam nome FROM marca");
+            SqlCommand cmd = new SqlCommand("SELECT carro.id, marca.nome, modelo.nome, chassi, placa, renavam nome FROM carro " +
+                                            "INNER JOIN modelo on modelo.id = carro.modelo_id " +
+                                            "INNER JOIN marca on marca.id = modelo.marca_id ");
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -26,12 +28,16 @@ namespace Services
             {
 
                 Carro obj = new Carro();
+                obj.modelo = new Modelo();
+                obj.modelo.marca = new Marca();
 
                 obj.id = reader.GetInt32(0);
-                obj.modelo.id = reader.GetInt32(1);
-                obj.chassi = reader.GetString(2);
+                obj.modelo.marca.nome = reader.GetString(1);
+                obj.modelo.nome = reader.GetString(2);
                 obj.chassi = reader.GetString(3);
-                obj.renavam = reader.GetInt32(4);
+                obj.placa = reader.GetString(4);
+                obj.renavam = reader.GetInt32(5);
+
 
                 lstRetorno.Add(obj);
 

@@ -13,7 +13,7 @@ namespace Services
         public List<Modelo> Listar()
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT id, marca_id, nome FROM marca");
+            SqlCommand cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo");
 
             ConexaoBanco banco = new ConexaoBanco();
 
