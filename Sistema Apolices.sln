@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "Sistema Apolices\UI.csproj", "{2405425D-61C8-4206-93D6-3321C779AADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C3D2DD48-CC77-4B39-9306-93B698E61C16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2405425D-61C8-4206-93D6-3321C779AADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2405425D-61C8-4206-93D6-3321C779AADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2405425D-61C8-4206-93D6-3321C779AADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D2DD48-CC77-4B39-9306-93B698E61C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D2DD48-CC77-4B39-9306-93B698E61C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D2DD48-CC77-4B39-9306-93B698E61C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D2DD48-CC77-4B39-9306-93B698E61C16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
