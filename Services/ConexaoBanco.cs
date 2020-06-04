@@ -13,7 +13,7 @@ namespace Services
         SqlConnection con = new SqlConnection();
         public ConexaoBanco()
         {
-            con.ConnectionString = @"Data Source=TI01\SQLEXPRESS;Initial Catalog=bd_apolice;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-T0AKLBR\SQLEXPRESS;Initial Catalog=bd_apolice;Integrated Security=True";
         }
 
         public void AbrirConexao()

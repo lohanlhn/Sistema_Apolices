@@ -13,7 +13,7 @@ namespace Services
         public List<Carro> Listar()
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT carro.id, marca.nome, modelo.nome, chassi, placa, renavam nome FROM carro " +
+            SqlCommand cmd = new SqlCommand("SELECT carro.id, marca.nome, modelo.nome, chassi, placa, renavam FROM carro " +
                                             "INNER JOIN modelo on modelo.id = carro.modelo_id " +
                                             "INNER JOIN marca on marca.id = modelo.marca_id ");
 
@@ -53,9 +53,8 @@ namespace Services
         public void Inserir(Carro objEntrada)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO carro(modelo_id, chassi, placa, renavam) " +
-                                            "VALUES (1, @chassi, @placa, @renavam)");
-
-            //objEntrada.modelo = new Modelo();
+                                            "VALUES (@modelo_id, @chassi, @placa, @renavam)");
+            
 
             cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.modelo.id));
             cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.chassi));

@@ -42,7 +42,7 @@ namespace Sistema_Apolices
             Carro carro = new Carro();
             carro.modelo = new Modelo();
 
-            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
             carro.chassi = txtChassi.Text;
             carro.placa = txtPlaca.Text;
             carro.renavam = txtRenavam.Text;
