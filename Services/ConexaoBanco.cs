@@ -54,7 +54,7 @@ namespace Services
             catch
             {
                 FecharConexao();
-                throw;
+                    throw;
             }
         }
     }

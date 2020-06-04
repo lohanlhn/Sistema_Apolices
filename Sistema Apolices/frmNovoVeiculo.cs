@@ -35,5 +35,18 @@ namespace Sistema_Apolices
             cmbModelo.SelectedIndex = -1;
 
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Carro carro = new Carro();
+            carro.modelo = new Modelo();
+
+            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+            carro.chassi = txtChassi.Text;
+            carro.placa = txtPlaca.Text;
+            carro.renavam = txtRenavam.Text;
+
+            new CarroController().Inserir(carro);
+        }
     }
 }

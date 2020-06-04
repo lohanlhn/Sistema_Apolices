@@ -11,7 +11,7 @@ namespace Entities
         public int id { get; set; }
         public string chassi { get; set; }
         public string placa { get; set; }
-        public int renavam { get; set; }
+        public string renavam { get; set; }
         public Modelo modelo { get; set; }
     }
 }

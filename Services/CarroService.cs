@@ -36,7 +36,7 @@ namespace Services
                 obj.modelo.nome = reader.GetString(2);
                 obj.chassi = reader.GetString(3);
                 obj.placa = reader.GetString(4);
-                obj.renavam = reader.GetInt32(5);
+                obj.renavam = reader.GetString(5);
 
 
                 lstRetorno.Add(obj);
@@ -48,6 +48,25 @@ namespace Services
 
             return lstRetorno;
 
+        }
+
+        public void Inserir(Carro objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO carro(modelo_id, chassi, placa, renavam) " +
+                                            "VALUES (1, @chassi, @placa, @renavam)");
+
+            //objEntrada.modelo = new Modelo();
+
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.modelo.id));
+            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.chassi));
+            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.placa));
+            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.renavam));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();            
         }
     }
 }

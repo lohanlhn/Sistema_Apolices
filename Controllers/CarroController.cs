@@ -14,5 +14,10 @@ namespace Controllers
         {
             return new CarroService().Listar();
         }
+
+        public void Inserir(Carro objEntrada)
+        {
+            new CarroService().Inserir(objEntrada);
+        }
     }
 }
