@@ -10,9 +10,9 @@ namespace Controllers
 {
     public class ModeloController
     {
-        public List<Modelo> Listar()
+        public List<Modelo> Listar(Modelo objEntrada)
         {
-            return new ModeloService().Listar();
+            return new ModeloService().Listar(objEntrada);
         }
     }
 }

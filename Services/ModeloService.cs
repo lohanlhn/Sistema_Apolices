@@ -10,10 +10,12 @@ namespace Services
 {
     public class ModeloService
     {
-        public List<Modelo> Listar()
+        public List<Modelo> Listar(Modelo objEntrada)
         {
 
-            SqlCommand cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo");
+            SqlCommand cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
+
+            cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.marca.id));
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -26,6 +28,7 @@ namespace Services
             {
 
                 Modelo obj = new Modelo();
+                obj.marca = new Marca();
 
                 obj.id = reader.GetInt32(0);
                 obj.marca.id = reader.GetInt32(1);
