@@ -51,9 +51,15 @@ namespace Sistema_Apolices
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            int idSelecionado = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
+            Carro carro = new Carro();
+            carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
+            carro.chassi = dgvCarros.SelectedRows[0].Cells[3].Value.ToString();
+            carro.placa = dgvCarros.SelectedRows[0].Cells[4].Value.ToString();
+            carro.renavam = dgvCarros.SelectedRows[0].Cells[5].Value.ToString();
 
-            frmAlterarVeiculo janela = new frmAlterarVeiculo(idSelecionado);
+            frmAlterarVeiculo janela = new frmAlterarVeiculo(carro);
+
+            janela.Show();
         }
     }
 }

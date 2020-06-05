@@ -68,26 +68,47 @@ namespace Services
             banco.FecharConexao();            
         }
 
-        //public Carro Selecionar(Carro objEntrada)
-        //{
-        //    SqlCommand cmd;
+        public Carro Selecionar(Carro objEntrada)
+        {
+            SqlCommand cmd;
 
-        //    ConexaoBanco banco = new ConexaoBanco();
+            ConexaoBanco banco = new ConexaoBanco();
 
-        //    banco.AbrirConexao();
+            banco.AbrirConexao();
 
-        //    cmd = new SqlCommand("SELECT id, modelo_id, chassi, placa, renavam FROM carro WHERE id = @id");
+            cmd = new SqlCommand("SELECT id, modelo_id, chassi, placa, renavam FROM carro WHERE id = @id");
 
-        //    cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
 
-        //    SqlDataReader reader = banco.Pesquisar(cmd);
-        //    reader.Read();
+            SqlDataReader reader = banco.Pesquisar(cmd);
+            reader.Read();
 
-        //    Carro obj = new Carro();
+            Carro obj = new Carro();
+            obj.modelo = new Modelo();
 
-        //    obj.id = reader.GetInt32(0);
-        //    obj.modelo.id = reader.GetInt32(1);
-        //    obj.modelo.id = reader.GetInt32(1);
-        //}
+            obj.id = reader.GetInt32(0);
+            obj.modelo.id = reader.GetInt32(1);
+            obj.chassi = reader.GetString(2);
+            obj.placa= reader.GetString(3);
+            obj.renavam= reader.GetString(4);
+
+            reader.Close();
+
+            cmd = new SqlCommand("SELECT marca_id FROM modelo WHERE id = @modelo_id");
+
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", obj.modelo.id));
+
+            reader = banco.Pesquisar(cmd);
+            reader.Read();
+
+            obj.modelo.marca = new Marca();
+
+            obj.modelo.marca.id = reader.GetInt32(0);
+
+            reader.Close();
+            banco.FecharConexao();
+
+            return obj;
+        }
     }
 }
