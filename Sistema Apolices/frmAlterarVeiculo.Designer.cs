@@ -44,7 +44,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(348, 204);
+            this.btnAlterar.Location = new System.Drawing.Point(249, 102);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 22;
@@ -55,7 +55,7 @@
             // lblRenavam
             // 
             this.lblRenavam.AutoSize = true;
-            this.lblRenavam.Location = new System.Drawing.Point(49, 214);
+            this.lblRenavam.Location = new System.Drawing.Point(165, 50);
             this.lblRenavam.Name = "lblRenavam";
             this.lblRenavam.Size = new System.Drawing.Size(53, 13);
             this.lblRenavam.TabIndex = 20;
@@ -63,16 +63,16 @@
             // 
             // txtChassi
             // 
-            this.txtChassi.Location = new System.Drawing.Point(323, 145);
+            this.txtChassi.Location = new System.Drawing.Point(15, 102);
             this.txtChassi.MaxLength = 20;
             this.txtChassi.Name = "txtChassi";
-            this.txtChassi.Size = new System.Drawing.Size(100, 20);
+            this.txtChassi.Size = new System.Drawing.Size(140, 20);
             this.txtChassi.TabIndex = 19;
             // 
             // lblChassi
             // 
             this.lblChassi.AutoSize = true;
-            this.lblChassi.Location = new System.Drawing.Point(278, 149);
+            this.lblChassi.Location = new System.Drawing.Point(16, 89);
             this.lblChassi.Name = "lblChassi";
             this.lblChassi.Size = new System.Drawing.Size(38, 13);
             this.lblChassi.TabIndex = 18;
@@ -81,7 +81,7 @@
             // lblPlaca
             // 
             this.lblPlaca.AutoSize = true;
-            this.lblPlaca.Location = new System.Drawing.Point(49, 149);
+            this.lblPlaca.Location = new System.Drawing.Point(165, 11);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(34, 13);
             this.lblPlaca.TabIndex = 17;
@@ -90,7 +90,7 @@
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(272, 72);
+            this.lblModelo.Location = new System.Drawing.Point(12, 49);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(42, 13);
             this.lblModelo.TabIndex = 16;
@@ -98,10 +98,10 @@
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(97, 146);
+            this.txtPlaca.Location = new System.Drawing.Point(168, 27);
             this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaca.Size = new System.Drawing.Size(156, 20);
             this.txtPlaca.TabIndex = 15;
             // 
             // cmbModelo
@@ -109,7 +109,7 @@
             this.cmbModelo.DisplayMember = "nome";
             this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(315, 64);
+            this.cmbModelo.Location = new System.Drawing.Point(15, 65);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(121, 21);
             this.cmbModelo.TabIndex = 14;
@@ -117,7 +117,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(54, 64);
+            this.lblMarca.Location = new System.Drawing.Point(12, 9);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 13;
@@ -127,7 +127,7 @@
             // 
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(97, 61);
+            this.cmbMarca.Location = new System.Drawing.Point(15, 25);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(121, 21);
             this.cmbMarca.TabIndex = 12;
@@ -135,15 +135,15 @@
             // 
             // txtRenavam
             // 
-            this.txtRenavam.Location = new System.Drawing.Point(118, 214);
+            this.txtRenavam.Location = new System.Drawing.Point(168, 66);
             this.txtRenavam.MaxLength = 20;
             this.txtRenavam.Name = "txtRenavam";
-            this.txtRenavam.Size = new System.Drawing.Size(100, 20);
+            this.txtRenavam.Size = new System.Drawing.Size(156, 20);
             this.txtRenavam.TabIndex = 23;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(267, 204);
+            this.btnCancelar.Location = new System.Drawing.Point(168, 102);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 24;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(342, 138);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
             this.Controls.Add(this.btnAlterar);
@@ -168,6 +168,8 @@
             this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cmbMarca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAlterarVeiculo";
             this.Text = "frmAlterarVeiculo";
             this.ResumeLayout(false);

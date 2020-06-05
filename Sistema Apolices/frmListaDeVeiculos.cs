@@ -12,10 +12,10 @@ using Entities;
 
 namespace Sistema_Apolices
 {
-    public partial class frmPrincipal : Form
+    public partial class frmListaDeVeiculos : Form
     {
         List<Carro> carro;
-        public frmPrincipal()
+        public frmListaDeVeiculos()
         {
             InitializeComponent();
 
