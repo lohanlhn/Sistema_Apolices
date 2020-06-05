@@ -30,6 +30,7 @@
         {
             this.dgvCarros = new System.Windows.Forms.DataGridView();
             this.btnNovoVeiculo = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +57,25 @@
             this.btnNovoVeiculo.UseVisualStyleBackColor = true;
             this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
             // 
-            // Principal
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(165, 46);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 2;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovoVeiculo);
             this.Controls.Add(this.dgvCarros);
-            this.Name = "Principal";
+            this.Name = "frmPrincipal";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarros)).EndInit();
             this.ResumeLayout(false);
@@ -74,6 +86,7 @@
 
         private System.Windows.Forms.DataGridView dgvCarros;
         private System.Windows.Forms.Button btnNovoVeiculo;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
 

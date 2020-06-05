@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAlterarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlterarVeiculo.Designer.cs">
+      <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNovoVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAlterarVeiculo.resx">
+      <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNovoVeiculo.resx">
       <DependentUpon>frmNovoVeiculo.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,5 +14,10 @@ namespace Controllers
         {
             return new MarcaService().Listar();
         }
+
+        public Marca Selecionar(Marca objEntrada)
+        {
+            return new MarcaService().Selecionar(objEntrada);
+        }
     }
 }

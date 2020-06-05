@@ -48,5 +48,12 @@ namespace Sistema_Apolices
 
             frm.Show();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            int idSelecionado = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
+
+            frmAlterarVeiculo janela = new frmAlterarVeiculo(idSelecionado);
+        }
     }
 }

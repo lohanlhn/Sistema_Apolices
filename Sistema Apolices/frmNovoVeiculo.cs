@@ -26,12 +26,14 @@ namespace Sistema_Apolices
 
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Modelo modelo = new Modelo();
-            modelo.marca = new Marca();
-            modelo.marca.id = (int)cmbMarca.SelectedValue;
+            Marca marca = new Marca();
+            marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
+
+
             cmbModelo.ValueMember = "id";
             cmbModelo.DisplayMember = "nome";
-            cmbModelo.DataSource = new ModeloController().Listar(modelo);
+            cmbModelo.DataSource = marca.modelos;
+
             cmbModelo.Text = "";
             cmbModelo.SelectedIndex = -1;
 

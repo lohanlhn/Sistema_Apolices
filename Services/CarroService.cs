@@ -67,5 +67,27 @@ namespace Services
             banco.Executar(cmd);
             banco.FecharConexao();            
         }
+
+        //public Carro Selecionar(Carro objEntrada)
+        //{
+        //    SqlCommand cmd;
+
+        //    ConexaoBanco banco = new ConexaoBanco();
+
+        //    banco.AbrirConexao();
+
+        //    cmd = new SqlCommand("SELECT id, modelo_id, chassi, placa, renavam FROM carro WHERE id = @id");
+
+        //    cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+
+        //    SqlDataReader reader = banco.Pesquisar(cmd);
+        //    reader.Read();
+
+        //    Carro obj = new Carro();
+
+        //    obj.id = reader.GetInt32(0);
+        //    obj.modelo.id = reader.GetInt32(1);
+        //    obj.modelo.id = reader.GetInt32(1);
+        //}
     }
 }
