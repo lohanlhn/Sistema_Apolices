@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.txtRenavam = new System.Windows.Forms.MaskedTextBox();
             this.lblRenavam = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
@@ -41,14 +41,15 @@
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // btnSalvar
+            // btnAlterar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(348, 204);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 22;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(348, 204);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 22;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // txtRenavam
             // 
@@ -142,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtRenavam);
             this.Controls.Add(this.lblRenavam);
             this.Controls.Add(this.txtChassi);
@@ -162,7 +163,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.MaskedTextBox txtRenavam;
         private System.Windows.Forms.Label lblRenavam;
         private System.Windows.Forms.TextBox txtChassi;

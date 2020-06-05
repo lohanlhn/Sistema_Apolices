@@ -34,32 +34,63 @@ namespace Sistema_Apolices
 
         private void AtualizarDgv()
         {
-            carro = new CarroController().Listar();
-
-            foreach (Carro item in carro)
+            try
             {
-                dgvCarros.Rows.Add(item.id.ToString(), item.modelo.marca.nome, item.modelo.nome, item.chassi, item.placa, item.renavam);
+                carro = new CarroController().Listar();
+                dgvCarros.Rows.Clear();
+                foreach (Carro item in carro)
+                {
+                    dgvCarros.Rows.Add(item.id.ToString(), item.modelo.marca.nome, item.modelo.nome, item.chassi, item.placa, item.renavam);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnNovoVeiculo_Click(object sender, EventArgs e)
         {
-            frmNovoVeiculo frm = new frmNovoVeiculo();
+            try
+            {
+                frmNovoVeiculo janela = new frmNovoVeiculo();
 
-            frm.Show();
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    AtualizarDgv();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Carro carro = new Carro();
-            carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
-            carro.chassi = dgvCarros.SelectedRows[0].Cells[3].Value.ToString();
-            carro.placa = dgvCarros.SelectedRows[0].Cells[4].Value.ToString();
-            carro.renavam = dgvCarros.SelectedRows[0].Cells[5].Value.ToString();
+            try
+            {
+                Carro carro = new Carro();
+                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
+                carro.chassi = dgvCarros.SelectedRows[0].Cells[3].Value.ToString();
+                carro.placa = dgvCarros.SelectedRows[0].Cells[4].Value.ToString();
+                carro.renavam = dgvCarros.SelectedRows[0].Cells[5].Value.ToString();
 
-            frmAlterarVeiculo janela = new frmAlterarVeiculo(carro);
+                frmAlterarVeiculo janela = new frmAlterarVeiculo(carro);
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    AtualizarDgv();
+                }
+            }
+            catch (Exception ex)
+            {
 
-            janela.Show();
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

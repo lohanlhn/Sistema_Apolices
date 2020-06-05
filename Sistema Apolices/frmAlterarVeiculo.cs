@@ -14,6 +14,7 @@ namespace Sistema_Apolices
 {
     public partial class frmAlterarVeiculo : Form
     {
+        int idCarroSelecionado;
         public frmAlterarVeiculo(Carro carroSelecionado)
         {
             InitializeComponent();            
@@ -39,6 +40,7 @@ namespace Sistema_Apolices
             txtChassi.Text = carroSelecionado.chassi;
             txtPlaca.Text = carroSelecionado.placa;
             txtRenavam.Text = carroSelecionado.renavam;
+            carroSelecionado.id = idCarroSelecionado;
         }
 
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
@@ -53,6 +55,20 @@ namespace Sistema_Apolices
 
             cmbModelo.Text = "";
             cmbModelo.SelectedIndex = -1;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Carro carro = new Carro();
+            carro.modelo = new Modelo();
+
+            carro.id = idCarroSelecionado;
+            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
+            carro.chassi = txtChassi.Text;
+            carro.placa = txtPlaca.Text;
+            carro.renavam = txtRenavam.Text;
+
+            new CarroController().Alterar(carro);
         }
     }
 }

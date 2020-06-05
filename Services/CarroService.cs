@@ -93,7 +93,7 @@ namespace Services
             obj.renavam= reader.GetString(4);
 
             reader.Close();
-
+            #region Carrega marca atraves do modelo
             cmd = new SqlCommand("SELECT marca_id FROM modelo WHERE id = @modelo_id");
 
             cmd.Parameters.Add(new SqlParameter("@modelo_id", obj.modelo.id));
@@ -104,11 +104,31 @@ namespace Services
             obj.modelo.marca = new Marca();
 
             obj.modelo.marca.id = reader.GetInt32(0);
+            #endregion
+
 
             reader.Close();
             banco.FecharConexao();
 
             return obj;
+        }
+
+        public void Alterar(Carro objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE carro SET modelo_id = @modelo_id, chassi = @chassi, placa = @placa, renavam = @renavam " +
+                                            "WHERE id = @id");
+
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.modelo.id));
+            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.chassi));
+            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.placa));
+            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.renavam));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();
         }
     }
 }

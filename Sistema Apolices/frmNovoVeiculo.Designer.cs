@@ -37,12 +37,14 @@
             this.lblChassi = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblRenavam = new System.Windows.Forms.Label();
-            this.txtRenavam = new System.Windows.Forms.MaskedTextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtRenavam = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbMarca
             // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(109, 51);
             this.cmbMarca.Name = "cmbMarca";
@@ -62,6 +64,7 @@
             // cmbModelo
             // 
             this.cmbModelo.DisplayMember = "nome";
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Location = new System.Drawing.Point(327, 54);
             this.cmbModelo.Name = "cmbModelo";
@@ -119,15 +122,6 @@
             this.lblRenavam.TabIndex = 9;
             this.lblRenavam.Text = "Renavam";
             // 
-            // txtRenavam
-            // 
-            this.txtRenavam.Location = new System.Drawing.Point(130, 201);
-            this.txtRenavam.Mask = "00000000000";
-            this.txtRenavam.Name = "txtRenavam";
-            this.txtRenavam.Size = new System.Drawing.Size(100, 20);
-            this.txtRenavam.TabIndex = 10;
-            this.txtRenavam.ValidatingType = typeof(int);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(360, 194);
@@ -138,13 +132,31 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // txtRenavam
+            // 
+            this.txtRenavam.Location = new System.Drawing.Point(120, 196);
+            this.txtRenavam.Name = "txtRenavam";
+            this.txtRenavam.Size = new System.Drawing.Size(100, 20);
+            this.txtRenavam.TabIndex = 12;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(266, 193);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmNovoVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblRenavam);
             this.Controls.Add(this.txtChassi);
             this.Controls.Add(this.lblChassi);
@@ -172,7 +184,8 @@
         private System.Windows.Forms.Label lblChassi;
         private System.Windows.Forms.TextBox txtChassi;
         private System.Windows.Forms.Label lblRenavam;
-        private System.Windows.Forms.MaskedTextBox txtRenavam;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtRenavam;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

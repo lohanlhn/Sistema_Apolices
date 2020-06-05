@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controllers;
 using Entities;
+using Utils;
 
 namespace Sistema_Apolices
 {
@@ -17,39 +18,90 @@ namespace Sistema_Apolices
         public frmNovoVeiculo()
         {
             InitializeComponent();
+
+            try
+            {
+                cmbMarca.ValueMember = "id";
+                cmbMarca.DisplayMember = "nome";
+                cmbMarca.DataSource = new MarcaController().Listar();
+                cmbMarca.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             
-            cmbMarca.ValueMember = "id";
-            cmbMarca.DisplayMember = "nome";            
-            cmbMarca.DataSource = new MarcaController().Listar();
-            cmbMarca.SelectedIndex = -1;
         }
 
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Marca marca = new Marca();
-            marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
+            try
+            {
+                Marca marca = new Marca();
+                marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
 
 
-            cmbModelo.ValueMember = "id";
-            cmbModelo.DisplayMember = "nome";
-            cmbModelo.DataSource = marca.modelos;
+                cmbModelo.ValueMember = "id";
+                cmbModelo.DisplayMember = "nome";
+                cmbModelo.DataSource = marca.modelos;
 
-            cmbModelo.Text = "";
-            cmbModelo.SelectedIndex = -1;
+                cmbModelo.Text = "";
+                cmbModelo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Carro carro = new Carro();
-            carro.modelo = new Modelo();
+            try
+            {
+                Carro carro = new Carro();
+                carro.modelo = new Modelo();
+                carro.modelo.marca = new Marca();
 
-            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
-            carro.chassi = txtChassi.Text;
-            carro.placa = txtPlaca.Text;
-            carro.renavam = txtRenavam.Text;
+                if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
+                {
+                    carro.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                }
+                if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
+                {
+                    carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+                }
 
-            new CarroController().Inserir(carro);
+                carro.chassi = txtChassi.Text;
+                carro.placa = txtPlaca.Text;
+                carro.renavam = txtRenavam.Text;
+
+                new CarroController().Inserir(carro);
+
+                MessageBox.Show("Operação realizada com sucesso");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (ConsistenciaException ex)
+            {
+                MessageBox.Show(ex.Mensagem);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+
+            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
