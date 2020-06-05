@@ -16,7 +16,7 @@ namespace Sistema_Apolices
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListaDeVeiculos());
+            Application.Run(new frmPrincipal());
         }
     }
 }

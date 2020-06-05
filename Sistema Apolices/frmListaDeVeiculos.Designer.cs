@@ -72,7 +72,7 @@
             this.btnAlterar.TabStop = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // frmPrincipal
+            // frmListaDeVeiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,9 +80,9 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovoVeiculo);
             this.Controls.Add(this.dgvCarros);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.Name = "frmPrincipal";
+            this.Name = "frmListaDeVeiculos";
             this.Text = "Lista de Veículos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovoVeiculo)).EndInit();
