@@ -26,12 +26,19 @@ namespace Sistema_Apolices
             dgvCarros.Columns[2].Name = "Modelo";
             dgvCarros.Columns[3].Name = "Chassi";
             dgvCarros.Columns[4].Name = "Placa";
-            dgvCarros.Columns[5].Name = "Renavam";            
+            dgvCarros.Columns[5].Name = "Renavam";
+            dgvCarros.Columns[3].Width = 130;
 
-            AtualizarDgv();            
+            AtualizarDgv(); 
+            
+            //Caso não possua registros o alterar fica desabilitado
+            if(dgvCarros.RowCount == 0)
+            {
+                btnAlterar.Enabled = false;
+            }
 
         }
-
+        
         private void AtualizarDgv()
         {
             try

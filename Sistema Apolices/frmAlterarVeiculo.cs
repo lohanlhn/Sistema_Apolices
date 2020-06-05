@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controllers;
 using Entities;
+using Utils;
 
 namespace Sistema_Apolices
 {
@@ -17,58 +18,110 @@ namespace Sistema_Apolices
         int idCarroSelecionado;
         public frmAlterarVeiculo(Carro carroSelecionado)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            try
+            {
+                Carro carro = new Carro();
 
-            Carro carro = new Carro();
+                #region Popula Comboboxs
+                carro = new CarroController().Selecionar(carroSelecionado);
+                cmbMarca.ValueMember = "id";
+                cmbMarca.DisplayMember = "nome";
+                cmbMarca.DataSource = new MarcaController().Listar();
+                cmbMarca.SelectedValue = carro.modelo.marca.id;
 
-            #region Popula Comboboxs
-            carro = new CarroController().Selecionar(carroSelecionado);
-            cmbMarca.ValueMember = "id";
-            cmbMarca.DisplayMember = "nome";
-            cmbMarca.DataSource = new MarcaController().Listar();
-            cmbMarca.SelectedValue = carro.modelo.marca.id;
+                Marca marca = new Marca();
+                marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
 
-            Marca marca = new Marca();
-            marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
+                cmbModelo.ValueMember = "id";
+                cmbModelo.DisplayMember = "nome";
+                cmbModelo.DataSource = marca.modelos;
+                cmbModelo.SelectedValue = carro.modelo.id;
+                #endregion
 
-            cmbModelo.ValueMember = "id";
-            cmbModelo.DisplayMember = "nome";
-            cmbModelo.DataSource = marca.modelos;
-            cmbModelo.SelectedValue = carro.modelo.id;
-            #endregion
+                #region Carrega textBoxs
+                txtChassi.Text = carroSelecionado.chassi;
+                txtPlaca.Text = carroSelecionado.placa;
+                txtRenavam.Text = carroSelecionado.renavam;
+                #endregion
 
-            txtChassi.Text = carroSelecionado.chassi;
-            txtPlaca.Text = carroSelecionado.placa;
-            txtRenavam.Text = carroSelecionado.renavam;
-            carroSelecionado.id = idCarroSelecionado;
+                //Necessario para alterar registro
+                idCarroSelecionado = carroSelecionado.id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+            
         }
 
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Marca marca = new Marca();
-            marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
+            try
+            {
+                Marca marca = new Marca();
+                marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
 
 
-            cmbModelo.ValueMember = "id";
-            cmbModelo.DisplayMember = "nome";
-            cmbModelo.DataSource = marca.modelos;
+                cmbModelo.ValueMember = "id";
+                cmbModelo.DisplayMember = "nome";
+                cmbModelo.DataSource = marca.modelos;
 
-            cmbModelo.Text = "";
-            cmbModelo.SelectedIndex = -1;
+                cmbModelo.Text = "";
+                cmbModelo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Carro carro = new Carro();
-            carro.modelo = new Modelo();
+            try
+            {
+                Carro carro = new Carro();
+                carro.modelo = new Modelo();
+                carro.modelo.marca = new Marca();
 
-            carro.id = idCarroSelecionado;
-            carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
-            carro.chassi = txtChassi.Text;
-            carro.placa = txtPlaca.Text;
-            carro.renavam = txtRenavam.Text;
+                carro.id = idCarroSelecionado;
+                if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
+                {
+                    carro.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                }
+                if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
+                {
+                    carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+                }
+                carro.chassi = txtChassi.Text;
+                carro.placa = txtPlaca.Text;
+                carro.renavam = txtRenavam.Text;
 
-            new CarroController().Alterar(carro);
+                new CarroController().Alterar(carro);
+
+                MessageBox.Show("Operação realizada com sucesso");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (ConsistenciaException ex)
+            {
+                MessageBox.Show(ex.Mensagem);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

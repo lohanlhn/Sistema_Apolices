@@ -74,6 +74,7 @@
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(109, 136);
+            this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 3;
@@ -108,7 +109,7 @@
             // txtChassi
             // 
             this.txtChassi.Location = new System.Drawing.Point(335, 135);
-            this.txtChassi.MaxLength = 17;
+            this.txtChassi.MaxLength = 20;
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.Size = new System.Drawing.Size(100, 20);
             this.txtChassi.TabIndex = 8;
@@ -135,6 +136,7 @@
             // txtRenavam
             // 
             this.txtRenavam.Location = new System.Drawing.Point(120, 196);
+            this.txtRenavam.MaxLength = 20;
             this.txtRenavam.Name = "txtRenavam";
             this.txtRenavam.Size = new System.Drawing.Size(100, 20);
             this.txtRenavam.TabIndex = 12;

@@ -53,13 +53,13 @@
             this.btnNovoVeiculo.Name = "btnNovoVeiculo";
             this.btnNovoVeiculo.Size = new System.Drawing.Size(75, 23);
             this.btnNovoVeiculo.TabIndex = 1;
-            this.btnNovoVeiculo.Text = "button1";
+            this.btnNovoVeiculo.Text = "Incluir";
             this.btnNovoVeiculo.UseVisualStyleBackColor = true;
             this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(165, 46);
+            this.btnAlterar.Location = new System.Drawing.Point(145, 46);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 2;

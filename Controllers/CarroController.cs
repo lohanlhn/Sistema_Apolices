@@ -18,6 +18,7 @@ namespace Controllers
 
         public void Inserir(Carro objEntrada)
         {
+            Consistir(objEntrada);
             new CarroService().Inserir(objEntrada);
         }
 
@@ -28,6 +29,7 @@ namespace Controllers
 
         public void Alterar(Carro objEntrada)
         {
+            Consistir(objEntrada);
             new CarroService().Alterar(objEntrada);
         }
 

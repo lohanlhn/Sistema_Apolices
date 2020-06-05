@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.txtRenavam = new System.Windows.Forms.MaskedTextBox();
             this.lblRenavam = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblChassi = new System.Windows.Forms.Label();
@@ -39,6 +38,8 @@
             this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.txtRenavam = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlterar
@@ -50,15 +51,6 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // txtRenavam
-            // 
-            this.txtRenavam.Location = new System.Drawing.Point(118, 211);
-            this.txtRenavam.Mask = "00000000000";
-            this.txtRenavam.Name = "txtRenavam";
-            this.txtRenavam.Size = new System.Drawing.Size(100, 20);
-            this.txtRenavam.TabIndex = 21;
-            this.txtRenavam.ValidatingType = typeof(int);
             // 
             // lblRenavam
             // 
@@ -72,7 +64,7 @@
             // txtChassi
             // 
             this.txtChassi.Location = new System.Drawing.Point(323, 145);
-            this.txtChassi.MaxLength = 17;
+            this.txtChassi.MaxLength = 20;
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.Size = new System.Drawing.Size(100, 20);
             this.txtChassi.TabIndex = 19;
@@ -107,6 +99,7 @@
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(97, 146);
+            this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 15;
@@ -114,6 +107,7 @@
             // cmbModelo
             // 
             this.cmbModelo.DisplayMember = "nome";
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Location = new System.Drawing.Point(315, 64);
             this.cmbModelo.Name = "cmbModelo";
@@ -131,6 +125,7 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(97, 61);
             this.cmbMarca.Name = "cmbMarca";
@@ -138,13 +133,32 @@
             this.cmbMarca.TabIndex = 12;
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 
+            // txtRenavam
+            // 
+            this.txtRenavam.Location = new System.Drawing.Point(118, 214);
+            this.txtRenavam.MaxLength = 20;
+            this.txtRenavam.Name = "txtRenavam";
+            this.txtRenavam.Size = new System.Drawing.Size(100, 20);
+            this.txtRenavam.TabIndex = 23;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(267, 204);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAlterarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.lblRenavam);
             this.Controls.Add(this.txtChassi);
             this.Controls.Add(this.lblChassi);
@@ -164,7 +178,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.MaskedTextBox txtRenavam;
         private System.Windows.Forms.Label lblRenavam;
         private System.Windows.Forms.TextBox txtChassi;
         private System.Windows.Forms.Label lblChassi;
@@ -174,5 +187,7 @@
         private System.Windows.Forms.ComboBox cmbModelo;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.TextBox txtRenavam;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
