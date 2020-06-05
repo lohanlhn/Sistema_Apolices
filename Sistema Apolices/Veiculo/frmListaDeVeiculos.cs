@@ -14,7 +14,7 @@ namespace Sistema_Apolices
 {
     public partial class frmListaDeVeiculos : Form
     {
-        List<Carro> carro;
+        
         public frmListaDeVeiculos()
         {
             InitializeComponent();
@@ -43,9 +43,10 @@ namespace Sistema_Apolices
         {
             try
             {
-                carro = new CarroController().Listar();
+                List<Carro> carros;
+                carros = new CarroController().Listar();
                 dgvCarros.Rows.Clear();
-                foreach (Carro item in carro)
+                foreach (Carro item in carros)
                 {
                     dgvCarros.Rows.Add(item.id.ToString(), item.modelo.marca.nome, item.modelo.nome, item.chassi, item.placa, item.renavam);
                 }

@@ -38,5 +38,10 @@ namespace Sistema_Apolices
         {
             abrirNovoForm(new frmListaDeVeiculos());
         }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            abrirNovoForm(new frmListaDeMarcas());
+        }
     }
 }
