@@ -82,8 +82,8 @@ namespace Sistema_Apolices
                 new CarroController().Inserir(carro);
 
                 MessageBox.Show("Operação realizada com sucesso");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (ConsistenciaException ex)
             {

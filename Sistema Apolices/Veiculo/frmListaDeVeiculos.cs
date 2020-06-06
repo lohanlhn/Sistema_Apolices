@@ -87,12 +87,9 @@ namespace Sistema_Apolices
         {
             try
             {
-                //Preenche o objeto carro
+                //Preenche o objeto carro com id 
                 Carro carro = new Carro();
-                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
-                carro.chassi = dgvCarros.SelectedRows[0].Cells[3].Value.ToString();
-                carro.placa = dgvCarros.SelectedRows[0].Cells[4].Value.ToString();
-                carro.renavam = dgvCarros.SelectedRows[0].Cells[5].Value.ToString();
+                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());                
 
                 //Envia o objeto para próxima janela
                 frmAlterarVeiculo janela = new frmAlterarVeiculo(carro);

@@ -15,16 +15,16 @@ namespace Sistema_Apolices
 {
     public partial class frmAlterarVeiculo : Form
     {
-        int idCarroSelecionado;
+        Carro carro = new Carro();
         public frmAlterarVeiculo(Carro carroSelecionado)
         {
             InitializeComponent();
             try
-            {
-                Carro carro = new Carro();
+            {                
+                carro = new CarroController().Selecionar(carroSelecionado);
 
                 #region Popula Comboboxs
-                carro = new CarroController().Selecionar(carroSelecionado);
+
                 cmbMarca.ValueMember = "id";
                 cmbMarca.DisplayMember = "nome";
                 cmbMarca.DataSource = new MarcaController().Listar();
@@ -37,16 +37,15 @@ namespace Sistema_Apolices
                 cmbModelo.DisplayMember = "nome";
                 cmbModelo.DataSource = marca.modelos;
                 cmbModelo.SelectedValue = carro.modelo.id;
+
                 #endregion
 
                 #region Carrega textBoxs
-                txtChassi.Text = carroSelecionado.chassi;
-                txtPlaca.Text = carroSelecionado.placa;
-                txtRenavam.Text = carroSelecionado.renavam;
+                txtChassi.Text = carro.chassi;
+                txtPlaca.Text = carro.placa;
+                txtRenavam.Text = carro.renavam;
                 #endregion
 
-                //Necessario para alterar registro
-                idCarroSelecionado = carroSelecionado.id;
             }
             catch (Exception ex)
             {
@@ -83,28 +82,28 @@ namespace Sistema_Apolices
         {
             try
             {
-                Carro carro = new Carro();
-                carro.modelo = new Modelo();
-                carro.modelo.marca = new Marca();
+                Carro carroAlterado = new Carro();
+                carroAlterado.modelo = new Modelo();
+                carroAlterado.modelo.marca = new Marca();
 
-                carro.id = idCarroSelecionado;
+                carroAlterado.id = carro.id;
                 if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
                 {
-                    carro.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                    carroAlterado.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
                 }
                 if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
                 {
-                    carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+                    carroAlterado.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
                 }
-                carro.chassi = txtChassi.Text;
-                carro.placa = txtPlaca.Text;
-                carro.renavam = txtRenavam.Text;
+                carroAlterado.chassi = txtChassi.Text;
+                carroAlterado.placa = txtPlaca.Text;
+                carroAlterado.renavam = txtRenavam.Text;
 
-                new CarroController().Alterar(carro);
+                new CarroController().Alterar(carroAlterado);
 
                 MessageBox.Show("Operação realizada com sucesso");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (ConsistenciaException ex)
             {
