@@ -30,14 +30,14 @@ namespace Sistema_Apolices
                 cmbMarca.DataSource = new MarcaController().Listar();
                 cmbMarca.SelectedValue = carro.modelo.marca.id;
 
-                Marca marca = new Marca();
-                marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
+                Modelo modelo = new Modelo();
+                modelo.marca = new Marca();
+                modelo.marca.id = carro.modelo.marca.id;
 
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
-                cmbModelo.DataSource = marca.modelos;
-                cmbModelo.SelectedValue = carro.modelo.id;
-
+                cmbModelo.DataSource = new ModeloController().Listar(modelo); ;
+                cmbModelo.SelectedValue = carro.modelo.id;            
                 #endregion
 
                 #region Carrega textBoxs

@@ -51,11 +51,9 @@ namespace Sistema_Apolices
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-            }
-            
 
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
