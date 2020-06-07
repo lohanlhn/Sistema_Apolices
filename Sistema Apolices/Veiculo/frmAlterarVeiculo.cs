@@ -59,13 +59,13 @@ namespace Sistema_Apolices
         {
             try
             {
-                Marca marca = new Marca();
-                marca = new MarcaController().Selecionar((Marca)cmbMarca.SelectedItem);
-
+                Modelo modelo = new Modelo();
+                modelo.marca = new Marca();
+                modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
 
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
-                cmbModelo.DataSource = marca.modelos;
+                cmbModelo.DataSource = new ModeloController().Listar(modelo);
 
                 cmbModelo.Text = "";
                 cmbModelo.SelectedIndex = -1;
@@ -75,7 +75,7 @@ namespace Sistema_Apolices
                 MessageBox.Show(ex.Message);
 
             }
-            
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
