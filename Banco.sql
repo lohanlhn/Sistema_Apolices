@@ -32,5 +32,24 @@ create table carro
     modelo_id int foreign key references modelo(id) not null,
     chassi varchar(20) not null unique,
     placa varchar(7) not null unique,
-    renavam varchar(20) int not null unique
+    renavam varchar(20) not null unique
 )
+
+insert into marca(nome) values 
+('FIAT'),
+('FORD'),
+('RENAUT')
+
+insert into modelo(nome, marca_id) values 
+('UNO', 1), 
+('PALIO', 1),
+('PUNTO', 1),
+('FIESTA', 2),
+('FOCUS', 2),
+('KA', 2),
+('SANDERO', 3),
+('CLIO', 3),
+('DUSTER', 3)
+
+insert into carro(modelo_id, chassi, placa, renavam) values 
+(1, '9BWSU19F08B302158', 'JHW6773', '00123456791')

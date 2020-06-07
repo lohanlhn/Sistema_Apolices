@@ -69,25 +69,6 @@ namespace Services
 
             obj.modelos = new ModeloService().Listar(modelo);
 
-            //cmd = new SqlCommand("SELECT id, nome FROM modelo WHERE marca_id = @marca_id");
-
-            //cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.id));
-
-            //reader = banco.Pesquisar(cmd);
-
-            //obj.modelos = new List<Modelo>();
-
-            //while (reader.Read())
-            //{
-
-            //    Modelo modelo = new Modelo();                
-
-            //    modelo.id = reader.GetInt32(0);
-            //    modelo.nome = reader.GetString(1);
-
-            //    obj.modelos.Add(modelo);
-
-            //}
 
             reader.Close();
             

@@ -36,7 +36,7 @@ namespace Sistema_Apolices
 
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
-                cmbModelo.DataSource = new ModeloController().Listar(modelo); ;
+                cmbModelo.DataSource = new ModeloController().Listar(modelo);                
                 cmbModelo.SelectedValue = carro.modelo.id;            
                 #endregion
 
