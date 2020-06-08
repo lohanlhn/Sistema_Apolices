@@ -168,10 +168,10 @@
             this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cmbMarca);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmAlterarVeiculo";
-            this.Text = "frmAlterarVeiculo";
+            this.Text = "Alterar Veiculo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

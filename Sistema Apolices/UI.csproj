@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmListaDeApolices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaDeApolices.Designer.cs">
+      <DependentUpon>frmListaDeApolices.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaDeModelos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmListaDeApolices.resx">
+      <DependentUpon>frmListaDeApolices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaDeModelos.resx">
       <DependentUpon>frmListaDeModelos.cs</DependentUpon>
     </EmbeddedResource>

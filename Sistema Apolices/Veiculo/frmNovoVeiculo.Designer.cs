@@ -168,10 +168,10 @@
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmNovoVeiculo";
-            this.Text = "NovoVeiculo";
+            this.Text = "Novo Veiculo";
             this.ResumeLayout(false);
             this.PerformLayout();
 
