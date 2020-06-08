@@ -31,6 +31,11 @@
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.PictureBox();
             this.btnNovoVeiculo = new System.Windows.Forms.PictureBox();
+            this.lblNvNome = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtNvNome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovoVeiculo)).BeginInit();
@@ -42,6 +47,7 @@
             this.dgvMarcas.AllowUserToDeleteRows = false;
             this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvMarcas.Location = new System.Drawing.Point(12, 58);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
@@ -59,6 +65,7 @@
             this.btnAlterar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAlterar.TabIndex = 6;
             this.btnAlterar.TabStop = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovoVeiculo
             // 
@@ -69,6 +76,54 @@
             this.btnNovoVeiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNovoVeiculo.TabIndex = 5;
             this.btnNovoVeiculo.TabStop = false;
+            this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
+            // 
+            // lblNvNome
+            // 
+            this.lblNvNome.AutoSize = true;
+            this.lblNvNome.Location = new System.Drawing.Point(376, 91);
+            this.lblNvNome.Name = "lblNvNome";
+            this.lblNvNome.Size = new System.Drawing.Size(65, 13);
+            this.lblNvNome.TabIndex = 21;
+            this.lblNvNome.Text = "Novo nome:";
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.Location = new System.Drawing.Point(376, 58);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(310, 13);
+            this.lblAviso.TabIndex = 20;
+            this.lblAviso.Text = "*Os Modelos continuaram ligados a Marca depois de sua edição";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(530, 219);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(611, 219);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 18;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // txtNvNome
+            // 
+            this.txtNvNome.Location = new System.Drawing.Point(379, 107);
+            this.txtNvNome.MaxLength = 100;
+            this.txtNvNome.Name = "txtNvNome";
+            this.txtNvNome.Size = new System.Drawing.Size(130, 20);
+            this.txtNvNome.TabIndex = 17;
             // 
             // frmListaDeMarcas
             // 
@@ -76,6 +131,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(698, 254);
+            this.Controls.Add(this.lblNvNome);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.txtNvNome);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovoVeiculo);
             this.Controls.Add(this.dgvMarcas);
@@ -86,6 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovoVeiculo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +155,10 @@
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.PictureBox btnAlterar;
         private System.Windows.Forms.PictureBox btnNovoVeiculo;
+        private System.Windows.Forms.Label lblNvNome;
+        private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtNvNome;
     }
 }

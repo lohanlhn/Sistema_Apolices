@@ -89,7 +89,6 @@
             this.btnMarcas.TabIndex = 2;
             this.btnMarcas.Text = "Marcas";
             this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Visible = false;
             this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
             // btnVeículos

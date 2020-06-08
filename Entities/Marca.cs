@@ -9,7 +9,6 @@ namespace Entities
     public class Marca
     {
         public int id { get; set; }
-        public string nome { get; set; }
-        public List<Modelo> modelos { get; set; }
+        public string nome { get; set; }        
     }
 }

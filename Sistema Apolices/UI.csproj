@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmNovaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNovaMarca.Designer.cs">
+      <DependentUpon>frmNovaMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Veiculo\frmAlterarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmNovaMarca.resx">
+      <DependentUpon>frmNovaMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Veiculo\frmAlterarVeiculo.resx">
       <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>
     </EmbeddedResource>

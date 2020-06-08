@@ -9,14 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Sistema_Apolices
 {
     public partial class frmListaDeMarcas : Form
     {
+
+        bool alterarMarca;
+
         public frmListaDeMarcas()
         {
             InitializeComponent();
+
+            #region Carrega datagrid
 
             dgvMarcas.ColumnCount = 2;
 
@@ -24,6 +30,14 @@ namespace Sistema_Apolices
             dgvMarcas.Columns[1].Name = "Marca";
 
             AtualizarDgv();
+
+            #endregion
+
+            lblNvNome.Visible =     false;
+            lblAviso.Visible =      false;
+            btnSalvar.Visible =     false;
+            btnCancelar.Visible =   false;
+            txtNvNome.Visible =     false;
         }
 
         private void AtualizarDgv()
@@ -43,6 +57,106 @@ namespace Sistema_Apolices
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnNovoVeiculo_Click(object sender, EventArgs e)
+        {
+            lblNvNome.Visible = true;
+            btnSalvar.Visible = true;
+            btnCancelar.Visible = true;
+            txtNvNome.Visible = true;
+
+            btnAlterar.Enabled = false;
+            dgvMarcas.Enabled = false;
+
+            alterarMarca = false;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            lblNvNome.Visible = true;
+            lblAviso.Visible = true;
+            btnSalvar.Visible = true;
+            btnCancelar.Visible = true;
+            txtNvNome.Visible = true;
+
+            txtNvNome.Text = dgvMarcas.SelectedRows[0].Cells[1].Value.ToString();
+
+            btnNovoVeiculo.Enabled = false;
+            dgvMarcas.Enabled = false;
+
+            alterarMarca = true;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (alterarMarca)
+                {
+                    AlterarMarca();
+                }
+                else
+                {
+                    SalvarNovaMarca();
+                }
+
+                MessageBox.Show("Ação realizada com sucesso");
+
+                lblNvNome.Visible = false;
+                lblAviso.Visible = false;
+                btnSalvar.Visible = false;
+                btnCancelar.Visible = false;
+                txtNvNome.Visible = false;
+
+                btnAlterar.Enabled = true;
+                btnNovoVeiculo.Enabled = true;
+                dgvMarcas.Enabled = true;
+
+                AtualizarDgv();
+
+            }
+            catch (ConsistenciaException ex)
+            {
+
+                MessageBox.Show(ex.Mensagem);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
+        private void SalvarNovaMarca()
+        {
+            
+            Marca marca = new Marca();
+            marca.nome = txtNvNome.Text;
+
+            new MarcaController().Inserir(marca);
+        }
+
+        private void AlterarMarca()
+        {
+            Marca marca = new Marca();            
+            marca.id = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
+            marca.nome = txtNvNome.Text;
+
+            new MarcaController().Alterar(marca);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            lblNvNome.Visible = false;
+            lblAviso.Visible = false;
+            btnSalvar.Visible = false;
+            btnCancelar.Visible = false;
+            txtNvNome.Visible = false;
+
+            dgvMarcas.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnNovoVeiculo.Enabled = true;
         }
     }
 }

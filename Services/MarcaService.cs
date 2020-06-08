@@ -40,6 +40,34 @@ namespace Services
             return lstRetorno;
 
         }
-        
+
+        public void Inserir(Marca objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO marca(nome) " +
+                                            "VALUES (@nome)");
+
+
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));            
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();
+        }
+        public void Alterar(Marca objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE marca SET nome = @nome " +
+                                            "WHERE id = @id");
+
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();
+        }
     }
 }
