@@ -19,7 +19,6 @@ namespace Sistema_Apolices
         {
             InitializeComponent();
 
-            //Organiza datagrid
             dgvCarros.ColumnCount = 6;
 
             dgvCarros.Columns[0].Name = "Código";

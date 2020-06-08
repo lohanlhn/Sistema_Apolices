@@ -30,7 +30,7 @@
         {
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.PictureBox();
-            this.btnNovoVeiculo = new System.Windows.Forms.PictureBox();
+            this.btnNovaMarca = new System.Windows.Forms.PictureBox();
             this.lblNvNome = new System.Windows.Forms.Label();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -38,13 +38,15 @@
             this.txtNvNome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNovoVeiculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMarcas
             // 
             this.dgvMarcas.AllowUserToAddRows = false;
             this.dgvMarcas.AllowUserToDeleteRows = false;
+            this.dgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarcas.GridColor = System.Drawing.SystemColors.ActiveCaption;
@@ -67,16 +69,16 @@
             this.btnAlterar.TabStop = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btnNovoVeiculo
+            // btnNovaMarca
             // 
-            this.btnNovoVeiculo.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
-            this.btnNovoVeiculo.Location = new System.Drawing.Point(12, 12);
-            this.btnNovoVeiculo.Name = "btnNovoVeiculo";
-            this.btnNovoVeiculo.Size = new System.Drawing.Size(48, 40);
-            this.btnNovoVeiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNovoVeiculo.TabIndex = 5;
-            this.btnNovoVeiculo.TabStop = false;
-            this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
+            this.btnNovaMarca.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
+            this.btnNovaMarca.Location = new System.Drawing.Point(12, 12);
+            this.btnNovaMarca.Name = "btnNovaMarca";
+            this.btnNovaMarca.Size = new System.Drawing.Size(48, 40);
+            this.btnNovaMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNovaMarca.TabIndex = 5;
+            this.btnNovaMarca.TabStop = false;
+            this.btnNovaMarca.Click += new System.EventHandler(this.btnNovaMarca_Click);
             // 
             // lblNvNome
             // 
@@ -99,6 +101,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(530, 219);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -109,6 +112,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Location = new System.Drawing.Point(611, 219);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
@@ -137,14 +141,14 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNvNome);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnNovoVeiculo);
+            this.Controls.Add(this.btnNovaMarca);
             this.Controls.Add(this.dgvMarcas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaDeMarcas";
             this.Text = "frmListaDeMarcas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNovoVeiculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +158,7 @@
 
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.PictureBox btnAlterar;
-        private System.Windows.Forms.PictureBox btnNovoVeiculo;
+        private System.Windows.Forms.PictureBox btnNovaMarca;
         private System.Windows.Forms.Label lblNvNome;
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Button btnCancelar;

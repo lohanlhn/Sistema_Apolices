@@ -16,7 +16,7 @@ namespace Sistema_Apolices
     public partial class frmListaDeMarcas : Form
     {
 
-        bool alterarMarca;
+        bool alterar;
 
         public frmListaDeMarcas()
         {
@@ -59,17 +59,19 @@ namespace Sistema_Apolices
             }
         }
 
-        private void btnNovoVeiculo_Click(object sender, EventArgs e)
+        private void btnNovaMarca_Click(object sender, EventArgs e)
         {
             lblNvNome.Visible = true;
             btnSalvar.Visible = true;
             btnCancelar.Visible = true;
             txtNvNome.Visible = true;
 
+            txtNvNome.Text = "";
+
             btnAlterar.Enabled = false;
             dgvMarcas.Enabled = false;
 
-            alterarMarca = false;
+            alterar = false;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -82,17 +84,17 @@ namespace Sistema_Apolices
 
             txtNvNome.Text = dgvMarcas.SelectedRows[0].Cells[1].Value.ToString();
 
-            btnNovoVeiculo.Enabled = false;
+            btnNovaMarca.Enabled = false;
             dgvMarcas.Enabled = false;
 
-            alterarMarca = true;
+            alterar = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (alterarMarca)
+                if (alterar)
                 {
                     AlterarMarca();
                 }
@@ -110,7 +112,7 @@ namespace Sistema_Apolices
                 txtNvNome.Visible = false;
 
                 btnAlterar.Enabled = true;
-                btnNovoVeiculo.Enabled = true;
+                btnNovaMarca.Enabled = true;
                 dgvMarcas.Enabled = true;
 
                 AtualizarDgv();
@@ -156,7 +158,7 @@ namespace Sistema_Apolices
 
             dgvMarcas.Enabled = true;
             btnAlterar.Enabled = true;
-            btnNovoVeiculo.Enabled = true;
+            btnNovaMarca.Enabled = true;
         }
     }
 }

@@ -36,6 +36,7 @@
             this.btnVeículos = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnModelos = new System.Windows.Forms.Button();
             this.panelNovoForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMenuLateral.SuspendLayout();
@@ -67,6 +68,7 @@
             // panelMenuLateral
             // 
             this.panelMenuLateral.BackColor = System.Drawing.SystemColors.Control;
+            this.panelMenuLateral.Controls.Add(this.btnModelos);
             this.panelMenuLateral.Controls.Add(this.btnMarcas);
             this.panelMenuLateral.Controls.Add(this.btnVeículos);
             this.panelMenuLateral.Controls.Add(this.panelLogo);
@@ -126,6 +128,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnModelos
+            // 
+            this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModelos.FlatAppearance.BorderSize = 0;
+            this.btnModelos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModelos.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnModelos.Location = new System.Drawing.Point(0, 169);
+            this.btnModelos.Name = "btnModelos";
+            this.btnModelos.Size = new System.Drawing.Size(168, 45);
+            this.btnModelos.TabIndex = 3;
+            this.btnModelos.Text = "Modelos";
+            this.btnModelos.UseVisualStyleBackColor = true;
+            this.btnModelos.Click += new System.EventHandler(this.btnModelos_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +173,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnMarcas;
+        private System.Windows.Forms.Button btnModelos;
     }
 }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmNovaMarca.cs">
+    <Compile Include="frmListaDeModelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNovaMarca.Designer.cs">
-      <DependentUpon>frmNovaMarca.cs</DependentUpon>
+    <Compile Include="frmListaDeModelos.Designer.cs">
+      <DependentUpon>frmListaDeModelos.cs</DependentUpon>
     </Compile>
     <Compile Include="Veiculo\frmAlterarVeiculo.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmNovaMarca.resx">
-      <DependentUpon>frmNovaMarca.cs</DependentUpon>
+    <EmbeddedResource Include="frmListaDeModelos.resx">
+      <DependentUpon>frmListaDeModelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Veiculo\frmAlterarVeiculo.resx">
       <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>

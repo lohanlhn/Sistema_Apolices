@@ -35,6 +35,16 @@ create table carro
     renavam varchar(20) not null unique
 )
 
+create table apolice
+(
+	id int identity(1,1) primary key not null,
+	carro_id int foreign key references carro(id) not null,
+	dt_inicio date not null,
+	dt_fim date not null,
+	vl_franquia decimal not null,
+	vl_premio decimal not null
+)
+
 insert into marca(nome) values 
 ('FIAT'),
 ('FORD'),
