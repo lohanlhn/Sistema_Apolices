@@ -48,5 +48,10 @@ namespace Sistema_Apolices
         {
             abrirNovoForm(new frmListaDeModelos());
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            formAtivo.Close();
+        }
     }
 }

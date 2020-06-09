@@ -32,11 +32,11 @@
             this.panelNovoForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
+            this.btnModelos = new System.Windows.Forms.Button();
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnVeículos = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnModelos = new System.Windows.Forms.Button();
             this.panelNovoForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMenuLateral.SuspendLayout();
@@ -78,10 +78,25 @@
             this.panelMenuLateral.Size = new System.Drawing.Size(168, 293);
             this.panelMenuLateral.TabIndex = 1;
             // 
+            // btnModelos
+            // 
+            this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModelos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnModelos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModelos.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnModelos.Location = new System.Drawing.Point(0, 169);
+            this.btnModelos.Name = "btnModelos";
+            this.btnModelos.Size = new System.Drawing.Size(168, 45);
+            this.btnModelos.TabIndex = 3;
+            this.btnModelos.Text = "Modelos";
+            this.btnModelos.UseVisualStyleBackColor = true;
+            this.btnModelos.Click += new System.EventHandler(this.btnModelos_Click);
+            // 
             // btnMarcas
             // 
             this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
+            this.btnMarcas.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -96,7 +111,7 @@
             // btnVeículos
             // 
             this.btnVeículos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVeículos.FlatAppearance.BorderSize = 0;
+            this.btnVeículos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnVeículos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVeículos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVeículos.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -127,21 +142,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnModelos
-            // 
-            this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModelos.FlatAppearance.BorderSize = 0;
-            this.btnModelos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModelos.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnModelos.Location = new System.Drawing.Point(0, 169);
-            this.btnModelos.Name = "btnModelos";
-            this.btnModelos.Size = new System.Drawing.Size(168, 45);
-            this.btnModelos.TabIndex = 3;
-            this.btnModelos.Text = "Modelos";
-            this.btnModelos.UseVisualStyleBackColor = true;
-            this.btnModelos.Click += new System.EventHandler(this.btnModelos_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmPrincipal
             // 
