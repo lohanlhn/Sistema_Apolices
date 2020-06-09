@@ -18,9 +18,9 @@ namespace Sistema_Apolices
         }
 
         private Form formAtivo = null;
-        private void abrirNovoForm(Form novoForm)
-        {
-            if(formAtivo != null)
+        public void abrirNovoForm(Form novoForm)
+        {            
+            if (formAtivo != null)
             {
                 formAtivo.Close();
             }
@@ -47,6 +47,12 @@ namespace Sistema_Apolices
         private void btnModelos_Click(object sender, EventArgs e)
         {
             abrirNovoForm(new frmListaDeModelos());
+        }
+
+        public void AbrirFrmExterno(Form form)
+        {
+            form.Show();
+            //abrirNovoForm(form);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

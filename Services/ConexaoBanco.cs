@@ -14,9 +14,9 @@ namespace Services
         public ConexaoBanco()
         {
             //Casa
-            con.ConnectionString = @"Data Source=DESKTOP-T0AKLBR\SQLEXPRESS;Initial Catalog=bd_apolice;Integrated Security=True";
+            //con.ConnectionString = @"Data Source=DESKTOP-T0AKLBR\SQLEXPRESS;Initial Catalog=bd_apolice;Integrated Security=True";
             //Trabalho
-            //con.ConnectionString = @"Data Source = TI01\SQLEXPRESS; Initial Catalog = bd_apolice; Integrated Security = True";
+            con.ConnectionString = @"Data Source = TI01\SQLEXPRESS; Initial Catalog = bd_apolice; Integrated Security = True";
         }
 
         public void AbrirConexao()

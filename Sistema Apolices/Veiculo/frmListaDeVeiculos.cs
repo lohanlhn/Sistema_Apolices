@@ -104,5 +104,14 @@ namespace Sistema_Apolices
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            frmListaDeApolices novoForm = new frmListaDeApolices();
+            new frmPrincipal().AbrirFrmExterno(novoForm);
+
+            
+        }
     }
 }

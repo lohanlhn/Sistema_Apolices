@@ -33,6 +33,13 @@
             this.btnNovaMarca = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.lblPlaca = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).BeginInit();
@@ -95,11 +102,87 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Marca:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 51);
+            this.label3.Margin = new System.Windows.Forms.Padding(3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Modelo:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 70);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Placa:";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(61, 12);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.TabIndex = 13;
+            this.lblCodigo.Text = "Código";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(58, 31);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(3);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 14;
+            this.lblMarca.Text = "Marca";
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Location = new System.Drawing.Point(63, 51);
+            this.lblModelo.Margin = new System.Windows.Forms.Padding(3);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(42, 13);
+            this.lblModelo.TabIndex = 15;
+            this.lblModelo.Text = "Modelo";
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(55, 70);
+            this.lblPlaca.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(34, 13);
+            this.lblPlaca.TabIndex = 16;
+            this.lblPlaca.Text = "Placa";
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(611, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 17;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            // 
             // frmListaDeApolices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 254);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.lblPlaca);
+            this.Controls.Add(this.lblModelo);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterar);
@@ -123,5 +206,12 @@
         private System.Windows.Forms.PictureBox btnNovaMarca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.Label lblPlaca;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
