@@ -46,10 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmListaDeApolices.cs">
+    <Compile Include="Telas Apolice\frmInserirApolice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaDeApolices.Designer.cs">
+    <Compile Include="Telas Apolice\frmInserirApolice.Designer.cs">
+      <DependentUpon>frmInserirApolice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas Apolice\frmListaDeApolices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas Apolice\frmListaDeApolices.Designer.cs">
       <DependentUpon>frmListaDeApolices.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListaDeModelos.cs">
@@ -90,7 +96,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmListaDeApolices.resx">
+    <EmbeddedResource Include="Telas Apolice\frmInserirApolice.resx">
+      <DependentUpon>frmInserirApolice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas Apolice\frmListaDeApolices.resx">
       <DependentUpon>frmListaDeApolices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaDeModelos.resx">
@@ -154,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Carro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apolice.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

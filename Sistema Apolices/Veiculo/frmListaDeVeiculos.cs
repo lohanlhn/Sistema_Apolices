@@ -105,13 +105,21 @@ namespace Sistema_Apolices
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
-            frmListaDeApolices novoForm = new frmListaDeApolices();
-            new frmPrincipal().AbrirFrmExterno(novoForm);
+            Carro carro = new Carro();
 
-            
+            carro.id = carro.id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);            
+
+            frmListaDeApolices novoForm = new frmListaDeApolices(carro);
+
+            novoForm.TopLevel = false;
+            novoForm.FormBorderStyle = FormBorderStyle.None;
+            novoForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(novoForm);
+            panel1.Tag = novoForm;
+            novoForm.BringToFront();
+            novoForm.Show();
         }
     }
 }

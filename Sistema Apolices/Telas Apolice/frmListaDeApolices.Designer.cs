@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvMarcas = new System.Windows.Forms.DataGridView();
-            this.btnAlterar = new System.Windows.Forms.PictureBox();
-            this.btnNovaMarca = new System.Windows.Forms.PictureBox();
+            this.dgvApolices = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,47 +38,29 @@
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
+            this.btnAlterar = new System.Windows.Forms.PictureBox();
+            this.btnNovaMarca = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApolices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvMarcas
+            // dgvApolices
             // 
-            this.dgvMarcas.AllowUserToAddRows = false;
-            this.dgvMarcas.AllowUserToDeleteRows = false;
-            this.dgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvApolices.AllowUserToAddRows = false;
+            this.dgvApolices.AllowUserToDeleteRows = false;
+            this.dgvApolices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvMarcas.Location = new System.Drawing.Point(12, 93);
-            this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.ReadOnly = true;
-            this.dgvMarcas.RowHeadersVisible = false;
-            this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(674, 149);
-            this.dgvMarcas.TabIndex = 1;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Image = global::Sistema_Apolices.Properties.Resources.Editar;
-            this.btnAlterar.Location = new System.Drawing.Point(646, 47);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(40, 40);
-            this.btnAlterar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAlterar.TabIndex = 8;
-            this.btnAlterar.TabStop = false;
-            // 
-            // btnNovaMarca
-            // 
-            this.btnNovaMarca.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
-            this.btnNovaMarca.Location = new System.Drawing.Point(592, 47);
-            this.btnNovaMarca.Name = "btnNovaMarca";
-            this.btnNovaMarca.Size = new System.Drawing.Size(48, 40);
-            this.btnNovaMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNovaMarca.TabIndex = 7;
-            this.btnNovaMarca.TabStop = false;
+            this.dgvApolices.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvApolices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApolices.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvApolices.Location = new System.Drawing.Point(12, 93);
+            this.dgvApolices.Name = "dgvApolices";
+            this.dgvApolices.ReadOnly = true;
+            this.dgvApolices.RowHeadersVisible = false;
+            this.dgvApolices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvApolices.Size = new System.Drawing.Size(674, 149);
+            this.dgvApolices.TabIndex = 1;
             // 
             // label1
             // 
@@ -170,11 +150,34 @@
             this.btnVoltar.TabIndex = 17;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Image = global::Sistema_Apolices.Properties.Resources.Editar;
+            this.btnAlterar.Location = new System.Drawing.Point(646, 47);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(40, 40);
+            this.btnAlterar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAlterar.TabIndex = 8;
+            this.btnAlterar.TabStop = false;
+            // 
+            // btnNovaMarca
+            // 
+            this.btnNovaMarca.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
+            this.btnNovaMarca.Location = new System.Drawing.Point(592, 47);
+            this.btnNovaMarca.Name = "btnNovaMarca";
+            this.btnNovaMarca.Size = new System.Drawing.Size(48, 40);
+            this.btnNovaMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNovaMarca.TabIndex = 7;
+            this.btnNovaMarca.TabStop = false;
+            this.btnNovaMarca.Click += new System.EventHandler(this.btnNovaMarca_Click);
             // 
             // frmListaDeApolices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(698, 254);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblPlaca);
@@ -187,11 +190,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovaMarca);
-            this.Controls.Add(this.dgvMarcas);
+            this.Controls.Add(this.dgvApolices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaDeApolices";
             this.Text = "frmListaDeApolices";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApolices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).EndInit();
             this.ResumeLayout(false);
@@ -201,7 +204,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvMarcas;
+        private System.Windows.Forms.DataGridView dgvApolices;
         private System.Windows.Forms.PictureBox btnAlterar;
         private System.Windows.Forms.PictureBox btnNovaMarca;
         private System.Windows.Forms.Label label1;

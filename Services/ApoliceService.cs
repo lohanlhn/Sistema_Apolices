@@ -43,5 +43,23 @@ namespace Services
             return lstRetorno;
 
         }
+        public void Inserir(Apolice objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO apolice(carro_id, dt_inicio, dt_fim, vl_franquia, vl_premio) " +
+                                            "VALUES (@carro_id, @dt_inicio, @dt_fim, @vl_franquia, @vl_premio)");
+
+
+            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
+            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
+            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
+            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();
+        }
     }
 }

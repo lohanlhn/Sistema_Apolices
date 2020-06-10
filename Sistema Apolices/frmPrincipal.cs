@@ -49,15 +49,10 @@ namespace Sistema_Apolices
             abrirNovoForm(new frmListaDeModelos());
         }
 
-        public void AbrirFrmExterno(Form form)
-        {
-            form.Show();
-            //abrirNovoForm(form);
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             formAtivo.Close();
         }
+
     }
 }

@@ -14,5 +14,10 @@ namespace Controllers
         {
             return new ApoliceService().Listar();
         }
+
+        public void Inserir(Apolice objEntrada)
+        {
+            new ApoliceService().Inserir(objEntrada);
+        }
     }
 }

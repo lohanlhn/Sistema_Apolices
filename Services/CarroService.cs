@@ -76,7 +76,10 @@ namespace Services
 
             banco.AbrirConexao();
 
-            cmd = new SqlCommand("SELECT id, modelo_id, chassi, placa, renavam FROM carro WHERE id = @id");
+            cmd = new SqlCommand("SELECT carro.id, modelo.id, modelo.nome, marca.id, marca.nome, chassi, placa, renavam FROM carro " +
+                                 "INNER JOIN modelo on modelo.id = carro.modelo_id " +
+                                 "INNER JOIN marca on marca.id = modelo.marca_id " +
+                                 "WHERE carro.id = @id");
 
             cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
 
@@ -85,27 +88,16 @@ namespace Services
 
             Carro obj = new Carro();
             obj.modelo = new Modelo();
+            obj.modelo.marca = new Marca();
 
             obj.id = reader.GetInt32(0);
             obj.modelo.id = reader.GetInt32(1);
-            obj.chassi = reader.GetString(2);
-            obj.placa= reader.GetString(3);
-            obj.renavam= reader.GetString(4);
-
-            reader.Close();
-            #region Carrega marca atraves do modelo
-            cmd = new SqlCommand("SELECT marca_id FROM modelo WHERE id = @modelo_id");
-
-            cmd.Parameters.Add(new SqlParameter("@modelo_id", obj.modelo.id));
-
-            reader = banco.Pesquisar(cmd);
-            reader.Read();
-
-            obj.modelo.marca = new Marca();
-
-            obj.modelo.marca.id = reader.GetInt32(0);
-            #endregion
-
+            obj.modelo.nome = reader.GetString(2);
+            obj.modelo.marca.id = reader.GetInt32(3);
+            obj.modelo.marca.nome = reader.GetString(4);
+            obj.chassi = reader.GetString(5);
+            obj.placa = reader.GetString(6);
+            obj.renavam = reader.GetString(7);                       
 
             reader.Close();
             banco.FecharConexao();
