@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Telas Apolice\frmAlterarApolice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas Apolice\frmAlterarApolice.Designer.cs">
+      <DependentUpon>frmAlterarApolice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas Apolice\frmInserirApolice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Telas Apolice\frmAlterarApolice.resx">
+      <DependentUpon>frmAlterarApolice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas Apolice\frmInserirApolice.resx">
       <DependentUpon>frmInserirApolice.cs</DependentUpon>
     </EmbeddedResource>

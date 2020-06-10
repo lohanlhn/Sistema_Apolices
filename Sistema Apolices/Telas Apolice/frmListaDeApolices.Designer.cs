@@ -161,6 +161,7 @@
             this.btnAlterar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAlterar.TabIndex = 8;
             this.btnAlterar.TabStop = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovaMarca
             // 

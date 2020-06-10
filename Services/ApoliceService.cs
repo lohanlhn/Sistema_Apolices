@@ -43,12 +43,59 @@ namespace Services
             return lstRetorno;
 
         }
+        public Apolice Selecionar(Apolice objEntrada)
+        {
+            SqlCommand cmd;
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+
+            cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
+                                 "WHERE id = @id");
+
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+
+            SqlDataReader reader = banco.Pesquisar(cmd);
+            reader.Read();
+
+            Apolice obj = new Apolice();
+
+            obj.id = reader.GetInt32(0);
+            obj.dtInicio = reader.GetDateTime(1);
+            obj.dtFim = reader.GetDateTime(2);
+            obj.valorFranquia = reader.GetDecimal(3);
+            obj.valorPremio = reader.GetDecimal(4);
+
+            reader.Close();
+            banco.FecharConexao();
+
+            return obj;
+        }
         public void Inserir(Apolice objEntrada)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO apolice(carro_id, dt_inicio, dt_fim, vl_franquia, vl_premio) " +
                                             "VALUES (@carro_id, @dt_inicio, @dt_fim, @vl_franquia, @vl_premio)");
 
 
+            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
+            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
+            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
+            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();
+        }
+        public void Alterar(Apolice objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE apolice SET dt_inicio = @dt_inicio, dt_fim = @dt_fim, vl_franquia = @vl_franquia, vl_premio = @vl_premio " +
+                                            "WHERE id = @id");
+
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
             cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
             cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
             cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));

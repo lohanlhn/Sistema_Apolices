@@ -71,5 +71,14 @@ namespace Sistema_Apolices
             frmInserirApolice janela = new frmInserirApolice(carro);
             janela.Show();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Apolice apolice = new Apolice();
+
+            apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
+
+            frmAlterarApolice janela = new frmAlterarApolice(apolice);
+        }
     }
 }
