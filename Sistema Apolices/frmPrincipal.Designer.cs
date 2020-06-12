@@ -82,6 +82,7 @@
             // 
             this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnModelos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnModelos.FlatAppearance.BorderSize = 0;
             this.btnModelos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModelos.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -97,6 +98,7 @@
             // 
             this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMarcas.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnMarcas.FlatAppearance.BorderSize = 0;
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -110,15 +112,17 @@
             // 
             // btnVeículos
             // 
+            this.btnVeículos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnVeículos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVeículos.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVeículos.FlatAppearance.BorderSize = 0;
             this.btnVeículos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVeículos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVeículos.ForeColor = System.Drawing.SystemColors.WindowText;
             this.btnVeículos.Location = new System.Drawing.Point(0, 79);
             this.btnVeículos.Name = "btnVeículos";
             this.btnVeículos.Size = new System.Drawing.Size(168, 45);
-            this.btnVeículos.TabIndex = 1;
+            this.btnVeículos.TabIndex = 0;
             this.btnVeículos.Text = "Veículos";
             this.btnVeículos.UseVisualStyleBackColor = true;
             this.btnVeículos.Click += new System.EventHandler(this.btnVeículos_Click);
