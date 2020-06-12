@@ -105,7 +105,7 @@ namespace Sistema_Apolices
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnApolices_Click(object sender, EventArgs e)
         {
             Carro carro = new Carro();
 

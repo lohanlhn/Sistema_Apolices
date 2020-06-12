@@ -51,7 +51,11 @@ namespace Sistema_Apolices
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            formAtivo.Close();
+            if(formAtivo != null)
+            {
+                formAtivo.Close();
+            }
+            
         }
 
     }

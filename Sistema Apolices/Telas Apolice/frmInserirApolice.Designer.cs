@@ -83,6 +83,7 @@
             this.btnCancelar.TabIndex = 31;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -133,6 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(230, 138);
+            this.ControlBox = false;
             this.Controls.Add(this.txtVlFranquia);
             this.Controls.Add(this.dtpFimVigencia);
             this.Controls.Add(this.lblFimVigencia);
@@ -143,7 +145,7 @@
             this.Controls.Add(this.lblInicioVigencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmInserirApolice";
             this.Text = "Inserir Apolice";
             this.ResumeLayout(false);

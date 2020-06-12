@@ -156,6 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 138);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
             this.Controls.Add(this.btnAlterar);
@@ -168,7 +169,7 @@
             this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cmbMarca);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frmAlterarVeiculo";
             this.Text = "Alterar Veiculo";

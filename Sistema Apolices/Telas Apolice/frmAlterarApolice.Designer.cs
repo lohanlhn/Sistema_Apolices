@@ -72,7 +72,7 @@
             this.dtpInicioVigencia.Name = "dtpInicioVigencia";
             this.dtpInicioVigencia.Size = new System.Drawing.Size(89, 20);
             this.dtpInicioVigencia.TabIndex = 52;
-            this.dtpInicioVigencia.Value = new System.DateTime(2020, 6, 9, 0, 0, 0, 0);
+            this.dtpInicioVigencia.Value = new System.DateTime(2020, 6, 12, 0, 0, 0, 0);
             // 
             // txtVlPremio
             // 
@@ -117,6 +117,7 @@
             this.btnCancelar.TabIndex = 47;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -126,12 +127,14 @@
             this.btnSalvar.TabIndex = 46;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmAlterarApolice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(230, 138);
+            this.ControlBox = false;
             this.Controls.Add(this.txtVlFranquia);
             this.Controls.Add(this.dtpFimVigencia);
             this.Controls.Add(this.lblFimVigencia);
@@ -142,7 +145,9 @@
             this.Controls.Add(this.lblInicioVigencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAlterarApolice";
             this.Text = "Alterar Apolice";
             this.ResumeLayout(false);

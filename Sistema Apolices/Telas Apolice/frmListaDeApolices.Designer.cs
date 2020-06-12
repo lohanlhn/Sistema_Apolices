@@ -39,10 +39,10 @@
             this.lblPlaca = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.PictureBox();
-            this.btnNovaMarca = new System.Windows.Forms.PictureBox();
+            this.btnNovaApolice = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApolices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNovaApolice)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvApolices
@@ -163,16 +163,16 @@
             this.btnAlterar.TabStop = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btnNovaMarca
+            // btnNovaApolice
             // 
-            this.btnNovaMarca.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
-            this.btnNovaMarca.Location = new System.Drawing.Point(592, 47);
-            this.btnNovaMarca.Name = "btnNovaMarca";
-            this.btnNovaMarca.Size = new System.Drawing.Size(48, 40);
-            this.btnNovaMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNovaMarca.TabIndex = 7;
-            this.btnNovaMarca.TabStop = false;
-            this.btnNovaMarca.Click += new System.EventHandler(this.btnNovaMarca_Click);
+            this.btnNovaApolice.Image = global::Sistema_Apolices.Properties.Resources.Adicionar;
+            this.btnNovaApolice.Location = new System.Drawing.Point(592, 47);
+            this.btnNovaApolice.Name = "btnNovaApolice";
+            this.btnNovaApolice.Size = new System.Drawing.Size(48, 40);
+            this.btnNovaApolice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNovaApolice.TabIndex = 7;
+            this.btnNovaApolice.TabStop = false;
+            this.btnNovaApolice.Click += new System.EventHandler(this.btnNovaApolice_Click);
             // 
             // frmListaDeApolices
             // 
@@ -190,14 +190,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnNovaMarca);
+            this.Controls.Add(this.btnNovaApolice);
             this.Controls.Add(this.dgvApolices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListaDeApolices";
             this.Text = "frmListaDeApolices";
             ((System.ComponentModel.ISupportInitialize)(this.dgvApolices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlterar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNovaMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNovaApolice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +207,7 @@
 
         private System.Windows.Forms.DataGridView dgvApolices;
         private System.Windows.Forms.PictureBox btnAlterar;
-        private System.Windows.Forms.PictureBox btnNovaMarca;
+        private System.Windows.Forms.PictureBox btnNovaApolice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
