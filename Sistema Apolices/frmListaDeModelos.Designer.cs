@@ -120,6 +120,7 @@
             this.dgvModelos.AllowUserToDeleteRows = false;
             this.dgvModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvModelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvModelos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModelos.GridColor = System.Drawing.SystemColors.ActiveCaption;

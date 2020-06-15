@@ -51,6 +51,7 @@
             this.dgvApolices.AllowUserToDeleteRows = false;
             this.dgvApolices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvApolices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvApolices.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvApolices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApolices.GridColor = System.Drawing.SystemColors.ActiveCaption;
