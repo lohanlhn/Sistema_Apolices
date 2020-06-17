@@ -66,6 +66,8 @@ namespace Sistema_Apolices
                 {
                     dgvApolices.Rows.Add(item.id.ToString(), item.dtInicio.ToString("d"), item.dtFim.ToString("d"), item.valorFranquia, item.valorPremio);
                 }
+
+                ChecarDataGrid();
             }
             catch (Exception ex)
             {
@@ -101,8 +103,6 @@ namespace Sistema_Apolices
         {
             try
             {
-                ChecaDataGrid();
-
                 Apolice apolice = new Apolice();
 
                 apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
@@ -116,21 +116,23 @@ namespace Sistema_Apolices
 
 
             }
-            catch (DataGridException ex)
-            {
-                MessageBox.Show(ex.Mensagem);
-            }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
         }
-        private void ChecaDataGrid()
+        private void ChecarDataGrid()
         {
             if (dgvApolices.RowCount == 0)
             {
-                throw new DataGridException("Não possuém registros para serem alterados.");
+                btnAlterar.Visible = false;
+                btnAlterar.Enabled = false;
+            }
+            else
+            {
+                btnAlterar.Visible = true;
+                btnAlterar.Enabled = true;
             }
         }
     }

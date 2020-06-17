@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
-using Utils;
 
 namespace Sistema_Apolices
 {
@@ -55,6 +54,8 @@ namespace Sistema_Apolices
                 {
                     dgvCarros.Rows.Add(item.id.ToString(), item.modelo.marca.nome, item.modelo.nome, item.chassi, item.placa, item.renavam);
                 }
+
+                ChecarDataGrid();
             }
             catch (Exception ex)
             {
@@ -85,9 +86,6 @@ namespace Sistema_Apolices
         {
             try
             {
-                ChecaDataGrid();
-
-                //Preenche o objeto carro com id 
                 Carro carro = new Carro();
                 carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
 
@@ -97,11 +95,6 @@ namespace Sistema_Apolices
                     AtualizarDgv();
                 }
 
-            }
-            catch (DataGridException ex)
-            {
-
-                MessageBox.Show(ex.Mensagem);
             }
             catch (Exception ex)
             {
@@ -128,11 +121,17 @@ namespace Sistema_Apolices
             novoForm.Show();
         }
 
-        private void ChecaDataGrid()
+        private void ChecarDataGrid()
         {
             if (dgvCarros.RowCount == 0)
             {
-                throw new DataGridException("Não possuém registros para serem alterados.");
+                btnAlterar.Visible = false;
+                btnAlterar.Enabled = false;
+            }
+            else
+            {
+                btnAlterar.Visible = true;
+                btnAlterar.Enabled = true;
             }
         }
     }
