@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Sistema_Apolices
 {
@@ -42,7 +43,7 @@ namespace Sistema_Apolices
             {
 
                 MessageBox.Show(ex.Message);
-            }            
+            }
         }
 
         private void AtualizarDgv()
@@ -54,7 +55,7 @@ namespace Sistema_Apolices
 
                 apolice.carro.id = carro.id;
 
-                List<Apolice> apolices;                
+                List<Apolice> apolices;
                 apolices = new ApoliceController().Listar(apolice);
 
                 //Limpa datagrid
@@ -82,7 +83,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                frmInserirApolice janela = new frmInserirApolice(carro);
+                frmCadastrarAlterarApolice janela = new frmCadastrarAlterarApolice(new Apolice(), carro);
 
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
@@ -100,31 +101,37 @@ namespace Sistema_Apolices
         {
             try
             {
-                if(dgvApolices.RowCount > 0)
+                ChecaDataGrid();
+
+                Apolice apolice = new Apolice();
+
+                apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
+
+                frmCadastrarAlterarApolice janela = new frmCadastrarAlterarApolice(apolice, new Carro());
+
+                if (janela.ShowDialog() == DialogResult.OK)
                 {
-                    Apolice apolice = new Apolice();
-
-                    apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
-
-                    frmAlterarApolice janela = new frmAlterarApolice(apolice);
-
-                    if (janela.ShowDialog() == DialogResult.OK)
-                    {
-                        AtualizarDgv();
-                    }
+                    AtualizarDgv();
                 }
-                else
-                {
-                    MessageBox.Show("Não possuém registros para serem alterados.");
-                }
-                
+
+
+            }
+            catch (DataGridException ex)
+            {
+                MessageBox.Show(ex.Mensagem);
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-            ;        
+        }
+        private void ChecaDataGrid()
+        {
+            if (dgvApolices.RowCount == 0)
+            {
+                throw new DataGridException("Não possuém registros para serem alterados.");
+            }
         }
     }
 }

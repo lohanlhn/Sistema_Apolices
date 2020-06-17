@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Telas Apolice\frmAlterarApolice.cs">
+    <Compile Include="Telas Apolice\frmCadastrarAlterarApolice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas Apolice\frmAlterarApolice.Designer.cs">
-      <DependentUpon>frmAlterarApolice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas Apolice\frmInserirApolice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas Apolice\frmInserirApolice.Designer.cs">
-      <DependentUpon>frmInserirApolice.cs</DependentUpon>
+    <Compile Include="Telas Apolice\frmCadastrarAlterarApolice.Designer.cs">
+      <DependentUpon>frmCadastrarAlterarApolice.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas Apolice\frmListaDeApolices.cs">
       <SubType>Form</SubType>
@@ -84,11 +78,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas Veiculo\frmAlterarVeiculo.cs">
+    <Compile Include="Telas Veiculo\frmCadastrarAlterarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas Veiculo\frmAlterarVeiculo.Designer.cs">
-      <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>
+    <Compile Include="Telas Veiculo\frmCadastrarAlterarVeiculo.Designer.cs">
+      <DependentUpon>frmCadastrarAlterarVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas Veiculo\frmListaDeVeiculos.cs">
       <SubType>Form</SubType>
@@ -96,17 +90,8 @@
     <Compile Include="Telas Veiculo\frmListaDeVeiculos.Designer.cs">
       <DependentUpon>frmListaDeVeiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas Veiculo\frmNovoVeiculo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas Veiculo\frmNovoVeiculo.Designer.cs">
-      <DependentUpon>frmNovoVeiculo.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Telas Apolice\frmAlterarApolice.resx">
-      <DependentUpon>frmAlterarApolice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas Apolice\frmInserirApolice.resx">
-      <DependentUpon>frmInserirApolice.cs</DependentUpon>
+    <EmbeddedResource Include="Telas Apolice\frmCadastrarAlterarApolice.resx">
+      <DependentUpon>frmCadastrarAlterarApolice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas Apolice\frmListaDeApolices.resx">
       <DependentUpon>frmListaDeApolices.cs</DependentUpon>
@@ -130,14 +115,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Telas Veiculo\frmAlterarVeiculo.resx">
-      <DependentUpon>frmAlterarVeiculo.cs</DependentUpon>
+    <EmbeddedResource Include="Telas Veiculo\frmCadastrarAlterarVeiculo.resx">
+      <DependentUpon>frmCadastrarAlterarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas Veiculo\frmListaDeVeiculos.resx">
       <DependentUpon>frmListaDeVeiculos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas Veiculo\frmNovoVeiculo.resx">
-      <DependentUpon>frmNovoVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

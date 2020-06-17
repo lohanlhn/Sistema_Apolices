@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Apolices
 {
-    partial class frmAlterarVeiculo
+    partial class frmCadastrarAlterarVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.lblRenavam = new System.Windows.Forms.Label();
             this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblChassi = new System.Windows.Forms.Label();
@@ -42,15 +42,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAlterar
+            // btnSalvar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(249, 102);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 22;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnSalvar.Location = new System.Drawing.Point(249, 102);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblRenavam
             // 
@@ -151,7 +151,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmAlterarVeiculo
+            // frmCadastrarAlterarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +159,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
-            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblRenavam);
             this.Controls.Add(this.txtChassi);
             this.Controls.Add(this.lblChassi);
@@ -171,7 +171,7 @@
             this.Controls.Add(this.cmbMarca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "frmAlterarVeiculo";
+            this.Name = "frmCadastrarAlterarVeiculo";
             this.Text = "Alterar Veiculo";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,7 +180,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblRenavam;
         private System.Windows.Forms.TextBox txtChassi;
         private System.Windows.Forms.Label lblChassi;

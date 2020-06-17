@@ -18,6 +18,8 @@ namespace Sistema_Apolices
         }
 
         private Form formAtivo = null;
+
+        //Fecha o form aberto e abre o novo
         public void abrirNovoForm(Form novoForm)
         {            
             if (formAtivo != null)

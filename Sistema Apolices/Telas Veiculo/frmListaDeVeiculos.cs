@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
+using Utils;
 
 namespace Sistema_Apolices
 {
     public partial class frmListaDeVeiculos : Form
     {
-        
+
         public frmListaDeVeiculos()
         {
             InitializeComponent();
@@ -26,26 +27,26 @@ namespace Sistema_Apolices
             dgvCarros.Columns[2].Name = "Modelo";
             dgvCarros.Columns[3].Name = "Chassi";
             dgvCarros.Columns[4].Name = "Placa";
-            dgvCarros.Columns[5].Name = "Renavam";            
+            dgvCarros.Columns[5].Name = "Renavam";
 
             //Atualiza datagrid
-            AtualizarDgv(); 
-            
+            AtualizarDgv();
+
             //Caso não possua registros o alterar fica desabilitado
-            if(dgvCarros.RowCount == 0)
+            if (dgvCarros.RowCount == 0)
             {
                 btnAlterar.Enabled = false;
             }
 
         }
-        
+
         private void AtualizarDgv()
         {
             try
             {
                 List<Carro> carros;
                 carros = new CarroController().Listar();
-                
+
                 //Limpa datagrid
                 dgvCarros.Rows.Clear();
 
@@ -66,8 +67,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                frmNovoVeiculo janela = new frmNovoVeiculo();
-
+                frmCadastrarAlterarVeiculo janela = new frmCadastrarAlterarVeiculo(new Carro());
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
                     AtualizarDgv();
@@ -85,16 +85,23 @@ namespace Sistema_Apolices
         {
             try
             {
+                ChecaDataGrid();
+
                 //Preenche o objeto carro com id 
                 Carro carro = new Carro();
-                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());                
+                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
 
-                //Envia o objeto para próxima janela
-                frmAlterarVeiculo janela = new frmAlterarVeiculo(carro);
+                frmCadastrarAlterarVeiculo janela = new frmCadastrarAlterarVeiculo(carro);
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
                     AtualizarDgv();
                 }
+
+            }
+            catch (DataGridException ex)
+            {
+
+                MessageBox.Show(ex.Mensagem);
             }
             catch (Exception ex)
             {
@@ -108,7 +115,7 @@ namespace Sistema_Apolices
         {
             Carro carro = new Carro();
 
-            carro.id = carro.id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);            
+            carro.id = carro.id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);
 
             frmListaDeApolices novoForm = new frmListaDeApolices(carro);
 
@@ -119,6 +126,14 @@ namespace Sistema_Apolices
             panel1.Tag = novoForm;
             novoForm.BringToFront();
             novoForm.Show();
+        }
+
+        private void ChecaDataGrid()
+        {
+            if (dgvCarros.RowCount == 0)
+            {
+                throw new DataGridException("Não possuém registros para serem alterados.");
+            }
         }
     }
 }
