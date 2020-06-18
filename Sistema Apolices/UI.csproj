@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Telas Apolice\frmCadastrarAlterarApolice.cs">
+    <Compile Include="Telas Marca\frmIncluirAlterarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas Apolice\frmCadastrarAlterarApolice.Designer.cs">
-      <DependentUpon>frmCadastrarAlterarApolice.cs</DependentUpon>
+    <Compile Include="Telas Marca\frmIncluirAlterarMarca.Designer.cs">
+      <DependentUpon>frmIncluirAlterarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas Modelo\frmIncluirAlterarModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas Modelo\frmIncluirAlterarModelo.Designer.cs">
+      <DependentUpon>frmIncluirAlterarModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas Apolice\frmIncluirAlterarApolice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas Apolice\frmIncluirAlterarApolice.Designer.cs">
+      <DependentUpon>frmIncluirAlterarApolice.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas Apolice\frmListaDeApolices.cs">
       <SubType>Form</SubType>
@@ -58,16 +70,16 @@
     <Compile Include="Telas Apolice\frmListaDeApolices.Designer.cs">
       <DependentUpon>frmListaDeApolices.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaDeModelos.cs">
+    <Compile Include="Telas Modelo\frmListaDeModelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaDeModelos.Designer.cs">
+    <Compile Include="Telas Modelo\frmListaDeModelos.Designer.cs">
       <DependentUpon>frmListaDeModelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaDeMarcas.cs">
+    <Compile Include="Telas Marca\frmListaDeMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaDeMarcas.Designer.cs">
+    <Compile Include="Telas Marca\frmListaDeMarcas.Designer.cs">
       <DependentUpon>frmListaDeMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
@@ -78,11 +90,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas Veiculo\frmCadastrarAlterarVeiculo.cs">
+    <Compile Include="Telas Veiculo\frmIncluirAlterarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas Veiculo\frmCadastrarAlterarVeiculo.Designer.cs">
-      <DependentUpon>frmCadastrarAlterarVeiculo.cs</DependentUpon>
+    <Compile Include="Telas Veiculo\frmIncluirAlterarVeiculo.Designer.cs">
+      <DependentUpon>frmIncluirAlterarVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas Veiculo\frmListaDeVeiculos.cs">
       <SubType>Form</SubType>
@@ -90,16 +102,22 @@
     <Compile Include="Telas Veiculo\frmListaDeVeiculos.Designer.cs">
       <DependentUpon>frmListaDeVeiculos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas Apolice\frmCadastrarAlterarApolice.resx">
-      <DependentUpon>frmCadastrarAlterarApolice.cs</DependentUpon>
+    <EmbeddedResource Include="Telas Marca\frmIncluirAlterarMarca.resx">
+      <DependentUpon>frmIncluirAlterarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas Modelo\frmIncluirAlterarModelo.resx">
+      <DependentUpon>frmIncluirAlterarModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas Apolice\frmIncluirAlterarApolice.resx">
+      <DependentUpon>frmIncluirAlterarApolice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas Apolice\frmListaDeApolices.resx">
       <DependentUpon>frmListaDeApolices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaDeModelos.resx">
+    <EmbeddedResource Include="Telas Modelo\frmListaDeModelos.resx">
       <DependentUpon>frmListaDeModelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaDeMarcas.resx">
+    <EmbeddedResource Include="Telas Marca\frmListaDeMarcas.resx">
       <DependentUpon>frmListaDeMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -115,8 +133,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Telas Veiculo\frmCadastrarAlterarVeiculo.resx">
-      <DependentUpon>frmCadastrarAlterarVeiculo.cs</DependentUpon>
+    <EmbeddedResource Include="Telas Veiculo\frmIncluirAlterarVeiculo.resx">
+      <DependentUpon>frmIncluirAlterarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas Veiculo\frmListaDeVeiculos.resx">
       <DependentUpon>frmListaDeVeiculos.cs</DependentUpon>

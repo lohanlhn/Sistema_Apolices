@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Apolices
 {
-    partial class frmCadastrarAlterarApolice
+    partial class frmIncluirAlterarApolice
     {
         /// <summary>
         /// Required designer variable.
@@ -129,7 +129,7 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // frmCadastrarAlterarApolice
+            // frmIncluirAlterarApolice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +148,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCadastrarAlterarApolice";
+            this.Name = "frmIncluirAlterarApolice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alterar Apolice";
             this.ResumeLayout(false);
             this.PerformLayout();

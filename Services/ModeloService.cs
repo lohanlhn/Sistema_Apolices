@@ -73,7 +73,7 @@ namespace Services
 
         public void Inserir(Modelo objEntrada)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO marca(nome, marca_id) " +
+            SqlCommand cmd = new SqlCommand("INSERT INTO modelo(nome, marca_id) " +
                                             "VALUES (@nome, @marca_id)");
 
 
@@ -88,7 +88,7 @@ namespace Services
         }
         public void Alterar(Modelo objEntrada)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE marca SET nome = @nome, marca_id = @marca_id " +
+            SqlCommand cmd = new SqlCommand("UPDATE modelo SET nome = @nome, marca_id = @marca_id " +
                                             "WHERE id = @id");
 
             cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));

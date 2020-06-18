@@ -13,10 +13,10 @@ using Utils;
 
 namespace Sistema_Apolices
 {
-    public partial class frmCadastrarAlterarVeiculo : Form
+    public partial class frmIncluirAlterarVeiculo : Form
     {
         private Carro _carro = new Carro();        
-        public frmCadastrarAlterarVeiculo(Carro carroSelecionado)
+        public frmIncluirAlterarVeiculo(Carro carroSelecionado)
         {
             InitializeComponent();
             try

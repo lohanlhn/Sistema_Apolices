@@ -68,7 +68,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                frmCadastrarAlterarVeiculo janela = new frmCadastrarAlterarVeiculo(new Carro());
+                frmIncluirAlterarVeiculo janela = new frmIncluirAlterarVeiculo(new Carro());
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
                     AtualizarDgv();
@@ -89,7 +89,7 @@ namespace Sistema_Apolices
                 Carro carro = new Carro();
                 carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
 
-                frmCadastrarAlterarVeiculo janela = new frmCadastrarAlterarVeiculo(carro);
+                frmIncluirAlterarVeiculo janela = new frmIncluirAlterarVeiculo(carro);
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
                     AtualizarDgv();

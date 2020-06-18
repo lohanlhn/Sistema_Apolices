@@ -18,7 +18,7 @@ namespace Controllers
         public void Inserir(Modelo objEntrada)
         {
             Consistir(objEntrada);
-            new ModeloController().Inserir(objEntrada);
+            new ModeloService().Inserir(objEntrada);
         }
 
         public void Alterar(Modelo objEntrada)

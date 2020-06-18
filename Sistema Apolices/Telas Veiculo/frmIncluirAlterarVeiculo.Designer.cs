@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Apolices
 {
-    partial class frmCadastrarAlterarVeiculo
+    partial class frmIncluirAlterarVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -151,7 +151,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmCadastrarAlterarVeiculo
+            // frmIncluirAlterarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +171,8 @@
             this.Controls.Add(this.cmbMarca);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "frmCadastrarAlterarVeiculo";
+            this.Name = "frmIncluirAlterarVeiculo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alterar Veiculo";
             this.ResumeLayout(false);
             this.PerformLayout();

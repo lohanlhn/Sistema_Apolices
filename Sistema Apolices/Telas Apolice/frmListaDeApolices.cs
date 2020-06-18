@@ -85,7 +85,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                frmCadastrarAlterarApolice janela = new frmCadastrarAlterarApolice(new Apolice(), carro);
+                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(new Apolice(), carro);
 
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
@@ -107,7 +107,7 @@ namespace Sistema_Apolices
 
                 apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
 
-                frmCadastrarAlterarApolice janela = new frmCadastrarAlterarApolice(apolice, new Carro());
+                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice, new Carro());
 
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
