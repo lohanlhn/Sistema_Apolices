@@ -52,7 +52,7 @@ namespace Sistema_Apolices
                 //Popula datagrid
                 foreach (Carro item in carros)
                 {
-                    dgvCarros.Rows.Add(item.id.ToString(), item.modelo.marca.nome, item.modelo.nome, item.chassi, item.placa, item.renavam);
+                    dgvCarros.Rows.Add(item.Id.ToString(), item.Modelo.Marca.Nome, item.Modelo.Nome, item.Chassi, item.Placa, item.Renavam);
                 }
 
                 ChecarDataGrid();
@@ -87,7 +87,7 @@ namespace Sistema_Apolices
             try
             {
                 Carro carro = new Carro();
-                carro.id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
+                carro.Id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
 
                 frmIncluirAlterarVeiculo janela = new frmIncluirAlterarVeiculo(carro);
                 if (janela.ShowDialog() == DialogResult.OK)
@@ -108,7 +108,7 @@ namespace Sistema_Apolices
         {
             Carro carro = new Carro();
 
-            carro.id = carro.id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);
+            carro.Id = carro.Id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);
 
             frmListaDeApolices novoForm = new frmListaDeApolices(carro);
 

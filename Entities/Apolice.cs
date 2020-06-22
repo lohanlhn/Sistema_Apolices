@@ -8,11 +8,11 @@ namespace Entities
 {
     public class Apolice
     {
-        public int id { get; set; }
-        public DateTime dtInicio { get; set; }
-        public DateTime dtFim { get; set; }
-        public decimal valorFranquia { get; set; }
-        public decimal valorPremio { get; set; }
-        public Carro carro { get; set; }
+        public int Id { get; set; }
+        public DateTime DtInicio { get; set; }
+        public DateTime DtFim { get; set; }
+        public decimal ValorFranquia { get; set; }
+        public decimal ValorPremio { get; set; }
+        public Carro Carro { get; set; }
     }
 }

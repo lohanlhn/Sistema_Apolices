@@ -21,7 +21,7 @@ namespace Sistema_Apolices
             InitializeComponent();
             try
             {                                
-                if (carroSelecionado.id != 0)
+                if (carroSelecionado.Id != 0)
                 {
                     Text = "Alterar Veiculo";
                     _carro = new CarroController().Selecionar(carroSelecionado);
@@ -31,22 +31,22 @@ namespace Sistema_Apolices
                     cmbMarca.ValueMember = "id";
                     cmbMarca.DisplayMember = "nome";
                     cmbMarca.DataSource = new MarcaController().Listar();
-                    cmbMarca.SelectedValue = _carro.modelo.marca.id;
+                    cmbMarca.SelectedValue = _carro.Modelo.Marca.Id;
 
                     Modelo modelo = new Modelo();
-                    modelo.marca = new Marca();
-                    modelo.marca.id = _carro.modelo.marca.id;
+                    modelo.Marca = new Marca();
+                    modelo.Marca.Id = _carro.Modelo.Marca.Id;
 
                     cmbModelo.ValueMember = "id";
                     cmbModelo.DisplayMember = "nome";
                     cmbModelo.DataSource = new ModeloController().Listar(modelo);
-                    cmbModelo.SelectedValue = _carro.modelo.id;
+                    cmbModelo.SelectedValue = _carro.Modelo.Id;
                     #endregion
 
                     #region Carrega textBoxs
-                    txtChassi.Text = _carro.chassi;
-                    txtPlaca.Text = _carro.placa;
-                    txtRenavam.Text = _carro.renavam;
+                    txtChassi.Text = _carro.Chassi;
+                    txtPlaca.Text = _carro.Placa;
+                    txtRenavam.Text = _carro.Renavam;
                     #endregion
 
                 }
@@ -74,8 +74,8 @@ namespace Sistema_Apolices
             try
             {
                 Modelo modelo = new Modelo();
-                modelo.marca = new Marca();
-                modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                modelo.Marca = new Marca();
+                modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
 
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
@@ -96,7 +96,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                if (_carro.id != 0)
+                if (_carro.Id != 0)
                 {
                     AlterarVeiculo();
                 }
@@ -130,21 +130,21 @@ namespace Sistema_Apolices
         private void AlterarVeiculo()
         {
             Carro carroAlterado = new Carro();
-            carroAlterado.modelo = new Modelo();
-            carroAlterado.modelo.marca = new Marca();
+            carroAlterado.Modelo = new Modelo();
+            carroAlterado.Modelo.Marca = new Marca();
 
-            carroAlterado.id = _carro.id;
+            carroAlterado.Id = _carro.Id;
             if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
             {
-                carroAlterado.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
             }
             if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
             {
-                carroAlterado.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+                carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
             }
-            carroAlterado.chassi = txtChassi.Text;
-            carroAlterado.placa = txtPlaca.Text;
-            carroAlterado.renavam = txtRenavam.Text;
+            carroAlterado.Chassi = txtChassi.Text;
+            carroAlterado.Placa = txtPlaca.Text;
+            carroAlterado.Renavam = txtRenavam.Text;
 
             new CarroController().Alterar(carroAlterado);
         }
@@ -152,21 +152,21 @@ namespace Sistema_Apolices
         private void InserirVeiculo()
         {
             Carro carro = new Carro();
-            carro.modelo = new Modelo();
-            carro.modelo.marca = new Marca();
+            carro.Modelo = new Modelo();
+            carro.Modelo.Marca = new Marca();
 
             if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
             {
-                carro.modelo.marca.id = Convert.ToInt32(cmbMarca.SelectedValue);
+                carro.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
             }
             if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
             {
-                carro.modelo.id = Convert.ToInt32(cmbModelo.SelectedValue);
+                carro.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
             }
 
-            carro.chassi = txtChassi.Text;
-            carro.placa = txtPlaca.Text;
-            carro.renavam = txtRenavam.Text;
+            carro.Chassi = txtChassi.Text;
+            carro.Placa = txtPlaca.Text;
+            carro.Renavam = txtRenavam.Text;
 
             new CarroController().Inserir(carro);
         }

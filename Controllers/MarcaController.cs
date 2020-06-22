@@ -29,7 +29,7 @@ namespace Controllers
 
         void Consistir(Marca objEntrada)
         {
-            if (string.IsNullOrEmpty(objEntrada.nome))
+            if (string.IsNullOrEmpty(objEntrada.Nome))
             {
                 throw new ConsistenciaException("Por favor, preencha o nome da marca");
             }

@@ -28,15 +28,15 @@ namespace Services
             {
 
                 Carro obj = new Carro();
-                obj.modelo = new Modelo();
-                obj.modelo.marca = new Marca();
+                obj.Modelo = new Modelo();
+                obj.Modelo.Marca = new Marca();
 
-                obj.id = reader.GetInt32(0);
-                obj.modelo.marca.nome = reader.GetString(1);
-                obj.modelo.nome = reader.GetString(2);
-                obj.chassi = reader.GetString(3);
-                obj.placa = reader.GetString(4);
-                obj.renavam = reader.GetString(5);
+                obj.Id = reader.GetInt32(0);
+                obj.Modelo.Marca.Nome = reader.GetString(1);
+                obj.Modelo.Nome = reader.GetString(2);
+                obj.Chassi = reader.GetString(3);
+                obj.Placa = reader.GetString(4);
+                obj.Renavam = reader.GetString(5);
 
 
                 lstRetorno.Add(obj);
@@ -56,10 +56,10 @@ namespace Services
                                             "VALUES (@modelo_id, @chassi, @placa, @renavam)");
             
 
-            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.modelo.id));
-            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.chassi));
-            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.placa));
-            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.renavam));
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.Modelo.Id));
+            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.Chassi));
+            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.Placa));
+            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.Renavam));
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -81,23 +81,23 @@ namespace Services
                                  "INNER JOIN marca on marca.id = modelo.marca_id " +
                                  "WHERE carro.id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
 
             SqlDataReader reader = banco.Pesquisar(cmd);
             reader.Read();
 
             Carro obj = new Carro();
-            obj.modelo = new Modelo();
-            obj.modelo.marca = new Marca();
+            obj.Modelo = new Modelo();
+            obj.Modelo.Marca = new Marca();
 
-            obj.id = reader.GetInt32(0);
-            obj.modelo.id = reader.GetInt32(1);
-            obj.modelo.nome = reader.GetString(2);
-            obj.modelo.marca.id = reader.GetInt32(3);
-            obj.modelo.marca.nome = reader.GetString(4);
-            obj.chassi = reader.GetString(5);
-            obj.placa = reader.GetString(6);
-            obj.renavam = reader.GetString(7);                       
+            obj.Id = reader.GetInt32(0);
+            obj.Modelo.Id = reader.GetInt32(1);
+            obj.Modelo.Nome = reader.GetString(2);
+            obj.Modelo.Marca.Id = reader.GetInt32(3);
+            obj.Modelo.Marca.Nome = reader.GetString(4);
+            obj.Chassi = reader.GetString(5);
+            obj.Placa = reader.GetString(6);
+            obj.Renavam = reader.GetString(7);                       
 
             reader.Close();
             banco.FecharConexao();
@@ -110,11 +110,11 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE carro SET modelo_id = @modelo_id, chassi = @chassi, placa = @placa, renavam = @renavam " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
-            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.modelo.id));
-            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.chassi));
-            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.placa));
-            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.renavam));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.Modelo.Id));
+            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.Chassi));
+            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.Placa));
+            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.Renavam));
 
             ConexaoBanco banco = new ConexaoBanco();
 

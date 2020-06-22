@@ -42,7 +42,7 @@ namespace Sistema_Apolices
 
                 foreach (Marca item in marcas)
                 {
-                    dgvMarcas.Rows.Add(item.id.ToString(), item.nome);
+                    dgvMarcas.Rows.Add(item.Id.ToString(), item.Nome);
                 }
 
                 ChecarDataGrid();
@@ -78,8 +78,8 @@ namespace Sistema_Apolices
             {
                 Marca marca = new Marca();
 
-                marca.id = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
-                marca.nome = dgvMarcas.SelectedRows[0].Cells[1].Value.ToString();
+                marca.Id = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
+                marca.Nome = dgvMarcas.SelectedRows[0].Cells[1].Value.ToString();
 
                 frmIncluirAlterarMarca janela = new frmIncluirAlterarMarca(marca);
 

@@ -35,23 +35,23 @@ namespace Controllers
 
         void Consistir(Carro objEntrada)
         {
-            if (objEntrada.modelo.marca.id <= 0)
+            if (objEntrada.Modelo.Marca.Id <= 0)
             {
                 throw new ConsistenciaException("Por favor, selecione uma marca");
             }
-            if (objEntrada.modelo.id <= 0)
+            if (objEntrada.Modelo.Id <= 0)
             {
                 throw new ConsistenciaException("Por favor, selecione um modelo");
             }
-            if (String.IsNullOrEmpty(objEntrada.chassi))
+            if (String.IsNullOrEmpty(objEntrada.Chassi))
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Chassi");
             }
-            if (String.IsNullOrEmpty(objEntrada.placa))
+            if (String.IsNullOrEmpty(objEntrada.Placa))
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Placa");
             }
-            if (String.IsNullOrEmpty(objEntrada.renavam))
+            if (String.IsNullOrEmpty(objEntrada.Renavam))
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Renavam");
             }

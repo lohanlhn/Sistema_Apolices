@@ -27,8 +27,8 @@ namespace Services
 
                 Marca obj = new Marca();
 
-                obj.id = reader.GetInt32(0);
-                obj.nome = reader.GetString(1);
+                obj.Id = reader.GetInt32(0);
+                obj.Nome = reader.GetString(1);
 
                 lstRetorno.Add(obj);
 
@@ -47,7 +47,7 @@ namespace Services
                                             "VALUES (@nome)");
 
 
-            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));            
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.Nome));            
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -60,8 +60,8 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE marca SET nome = @nome " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
-            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.Nome));
 
             ConexaoBanco banco = new ConexaoBanco();
 

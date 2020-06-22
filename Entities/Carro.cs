@@ -8,10 +8,10 @@ namespace Entities
 {
     public class Carro
     {
-        public int id { get; set; }
-        public string chassi { get; set; }
-        public string placa { get; set; }
-        public string renavam { get; set; }
-        public Modelo modelo { get; set; }
+        public int Id { get; set; }
+        public string Chassi { get; set; }
+        public string Placa { get; set; }
+        public string Renavam { get; set; }
+        public Modelo Modelo { get; set; }
     }
 }

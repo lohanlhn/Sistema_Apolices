@@ -13,12 +13,12 @@ namespace Services
         public List<Apolice> Listar(Apolice objEntrada)
         {
             SqlCommand cmd = new SqlCommand();
-            if (objEntrada.carro.id > 0)
+            if (objEntrada.Carro.Id > 0)
             {
                 cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
                                      "WHERE carro_id = @carro_id");
 
-                cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
+                cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.Carro.Id));
             }
             else
             {
@@ -37,11 +37,11 @@ namespace Services
 
                 Apolice obj = new Apolice();
 
-                obj.id = reader.GetInt32(0);
-                obj.dtInicio = reader.GetDateTime(1);
-                obj.dtFim = reader.GetDateTime(2);
-                obj.valorFranquia = reader.GetDecimal(3);
-                obj.valorPremio = reader.GetDecimal(4);
+                obj.Id = reader.GetInt32(0);
+                obj.DtInicio = reader.GetDateTime(1);
+                obj.DtFim = reader.GetDateTime(2);
+                obj.ValorFranquia = reader.GetDecimal(3);
+                obj.ValorPremio = reader.GetDecimal(4);
 
                 lstRetorno.Add(obj);
 
@@ -64,18 +64,18 @@ namespace Services
             cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
                                  "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
 
             SqlDataReader reader = banco.Pesquisar(cmd);
             reader.Read();
 
             Apolice obj = new Apolice();
 
-            obj.id = reader.GetInt32(0);
-            obj.dtInicio = reader.GetDateTime(1);
-            obj.dtFim = reader.GetDateTime(2);
-            obj.valorFranquia = reader.GetDecimal(3);
-            obj.valorPremio = reader.GetDecimal(4);
+            obj.Id = reader.GetInt32(0);
+            obj.DtInicio = reader.GetDateTime(1);
+            obj.DtFim = reader.GetDateTime(2);
+            obj.ValorFranquia = reader.GetDecimal(3);
+            obj.ValorPremio = reader.GetDecimal(4);
 
             reader.Close();
             banco.FecharConexao();
@@ -88,11 +88,11 @@ namespace Services
                                             "VALUES (@carro_id, @dt_inicio, @dt_fim, @vl_franquia, @vl_premio)");
 
 
-            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
-            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
-            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
-            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
-            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
+            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.Carro.Id));
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.DtInicio));
+            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.DtFim));
+            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.ValorFranquia));
+            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.ValorPremio));
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -105,11 +105,11 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE apolice SET dt_inicio = @dt_inicio, dt_fim = @dt_fim, vl_franquia = @vl_franquia, vl_premio = @vl_premio " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));            
-            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
-            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
-            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
-            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));            
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.DtInicio));
+            cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.DtFim));
+            cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.ValorFranquia));
+            cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.ValorPremio));
 
             ConexaoBanco banco = new ConexaoBanco();
 

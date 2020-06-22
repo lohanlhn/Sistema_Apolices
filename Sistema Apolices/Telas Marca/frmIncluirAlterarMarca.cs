@@ -21,13 +21,13 @@ namespace Sistema_Apolices
         {
             InitializeComponent();
 
-            if (!String.IsNullOrEmpty(marcaSelecionada.nome))
+            if (!String.IsNullOrEmpty(marcaSelecionada.Nome))
             {
                 lblAviso.Visible = true;
-                txtNvNome.Text = marcaSelecionada.nome;
+                txtNvNome.Text = marcaSelecionada.Nome;
 
                 _alterar = true;
-                _marca.id = marcaSelecionada.id;
+                _marca.Id = marcaSelecionada.Id;
 
                 Text = "Alterar Marca";
             }
@@ -47,15 +47,15 @@ namespace Sistema_Apolices
                 if (_alterar)
                 {
                     Marca marca = new Marca();
-                    marca.id = _marca.id;
-                    marca.nome = txtNvNome.Text;
+                    marca.Id = _marca.Id;
+                    marca.Nome = txtNvNome.Text;
 
                     new MarcaController().Alterar(marca);
                 }
                 else
                 {
                     Marca marca = new Marca();
-                    marca.nome = txtNvNome.Text;
+                    marca.Nome = txtNvNome.Text;
 
                     new MarcaController().Inserir(marca);
                 }

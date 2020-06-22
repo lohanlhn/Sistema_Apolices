@@ -23,10 +23,10 @@ namespace Sistema_Apolices
             {
                 carro = new CarroController().Selecionar(carroSelecionado);
 
-                lblCodigo.Text = carro.id.ToString();
-                lblModelo.Text = carro.modelo.nome;
-                lblMarca.Text = carro.modelo.marca.nome;
-                lblPlaca.Text = carro.placa;
+                lblCodigo.Text = carro.Id.ToString();
+                lblModelo.Text = carro.Modelo.Nome;
+                lblMarca.Text = carro.Modelo.Marca.Nome;
+                lblPlaca.Text = carro.Placa;
 
                 dgvApolices.ColumnCount = 5;
 
@@ -51,9 +51,9 @@ namespace Sistema_Apolices
             try
             {
                 Apolice apolice = new Apolice();
-                apolice.carro = new Carro();
+                apolice.Carro = new Carro();
 
-                apolice.carro.id = carro.id;
+                apolice.Carro.Id = carro.Id;
 
                 List<Apolice> apolices;
                 apolices = new ApoliceController().Listar(apolice);
@@ -64,7 +64,7 @@ namespace Sistema_Apolices
                 //Popula datagrid
                 foreach (Apolice item in apolices)
                 {
-                    dgvApolices.Rows.Add(item.id.ToString(), item.dtInicio.ToString("d"), item.dtFim.ToString("d"), item.valorFranquia, item.valorPremio);
+                    dgvApolices.Rows.Add(item.Id.ToString(), item.DtInicio.ToString("d"), item.DtFim.ToString("d"), item.ValorFranquia, item.ValorPremio);
                 }
 
                 ChecarDataGrid();
@@ -105,7 +105,7 @@ namespace Sistema_Apolices
             {
                 Apolice apolice = new Apolice();
 
-                apolice.id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
+                apolice.Id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
 
                 frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice, new Carro());
 

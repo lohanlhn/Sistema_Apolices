@@ -28,11 +28,11 @@ namespace Controllers
         }
         void Consistir(Modelo objEntrada)
         {            
-            if (string.IsNullOrEmpty(objEntrada.nome))
+            if (string.IsNullOrEmpty(objEntrada.Nome))
             {
                 throw new ConsistenciaException("Por favor, preencha o nome do modelo");
             }
-            if (objEntrada.marca.id <= 0)
+            if (objEntrada.Marca.Id <= 0)
             {
                 throw new ConsistenciaException("Por favor, escolha a marca");
             }

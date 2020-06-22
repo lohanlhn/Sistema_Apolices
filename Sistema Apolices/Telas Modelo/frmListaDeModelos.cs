@@ -41,7 +41,7 @@ namespace Sistema_Apolices
             try
             {
                 Modelo modelo = new Modelo();
-                modelo.marca = new Marca();
+                modelo.Marca = new Marca();
 
                 List <Modelo> modelos;
                 
@@ -49,7 +49,7 @@ namespace Sistema_Apolices
                 dgvModelos.Rows.Clear();
                 foreach (Modelo item in modelos)
                 {
-                    dgvModelos.Rows.Add(item.id.ToString(), item.marca.id.ToString(),item.marca.nome, item.nome);
+                    dgvModelos.Rows.Add(item.Id.ToString(), item.Marca.Id.ToString(),item.Marca.Nome, item.Nome);
                 }
 
                 ChecarDataGrid();
@@ -86,11 +86,11 @@ namespace Sistema_Apolices
             try
             {
                 Modelo modelo = new Modelo();
-                modelo.marca = new Marca();
+                modelo.Marca = new Marca();
 
-                modelo.id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[0].Value);
-                modelo.marca.id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[1].Value);
-                modelo.nome = dgvModelos.SelectedRows[0].Cells[3].Value.ToString();
+                modelo.Id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[0].Value);
+                modelo.Marca.Id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[1].Value);
+                modelo.Nome = dgvModelos.SelectedRows[0].Cells[3].Value.ToString();
 
                 frmIncluirAlterarModelo janela = new frmIncluirAlterarModelo(modelo);
 

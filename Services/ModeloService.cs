@@ -16,11 +16,11 @@ namespace Services
             ConexaoBanco banco = new ConexaoBanco();
             SqlDataReader reader;
             List<Modelo> lstRetorno = new List<Modelo>();
-            if (objEntrada.marca.id > 0)
+            if (objEntrada.Marca.Id > 0)
             {
                 cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
 
-                cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.marca.id));
+                cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.Marca.Id));
 
                 banco.AbrirConexao();
                 reader = banco.Pesquisar(cmd);
@@ -29,11 +29,11 @@ namespace Services
                 {
 
                     Modelo obj = new Modelo();
-                    obj.marca = new Marca();
+                    obj.Marca = new Marca();
 
-                    obj.id = reader.GetInt32(0);
-                    obj.marca.id = reader.GetInt32(1);
-                    obj.nome = reader.GetString(2);
+                    obj.Id = reader.GetInt32(0);
+                    obj.Marca.Id = reader.GetInt32(1);
+                    obj.Nome = reader.GetString(2);
 
                     lstRetorno.Add(obj);
 
@@ -51,12 +51,12 @@ namespace Services
                 {
 
                     Modelo obj = new Modelo();
-                    obj.marca = new Marca();
+                    obj.Marca = new Marca();
 
-                    obj.id = reader.GetInt32(0);
-                    obj.marca.id = reader.GetInt32(1);
-                    obj.marca.nome = reader.GetString(2);
-                    obj.nome = reader.GetString(3);
+                    obj.Id = reader.GetInt32(0);
+                    obj.Marca.Id = reader.GetInt32(1);
+                    obj.Marca.Nome = reader.GetString(2);
+                    obj.Nome = reader.GetString(3);
 
                     lstRetorno.Add(obj);
 
@@ -77,8 +77,8 @@ namespace Services
                                             "VALUES (@nome, @marca_id)");
 
 
-            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));
-            cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.marca.id));
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.Nome));
+            cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.Marca.Id));
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -91,9 +91,9 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE modelo SET nome = @nome, marca_id = @marca_id " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
-            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.nome));
-            cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.marca.id));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
+            cmd.Parameters.Add(new SqlParameter("@nome", objEntrada.Nome));
+            cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.Marca.Id));
 
             ConexaoBanco banco = new ConexaoBanco();
 
