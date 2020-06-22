@@ -12,21 +12,21 @@ namespace Sistema_Apolices
 {
     public partial class frmPrincipal : Form
     {
+        private Form _formAtivo = null;
+
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
-        private Form formAtivo = null;
-
         //Fecha o form aberto e abre o novo
         public void abrirNovoForm(Form novoForm)
         {            
-            if (formAtivo != null)
+            if (_formAtivo != null)
             {
-                formAtivo.Close();
+                _formAtivo.Close();
             }
-            formAtivo = novoForm;
+            _formAtivo = novoForm;
             novoForm.TopLevel = false;
             novoForm.FormBorderStyle = FormBorderStyle.None;
             novoForm.Dock = DockStyle.Fill;
@@ -53,9 +53,9 @@ namespace Sistema_Apolices
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(formAtivo != null)
+            if(_formAtivo != null)
             {
-                formAtivo.Close();
+                _formAtivo.Close();
             }
             
         }

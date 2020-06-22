@@ -37,8 +37,8 @@ namespace Services
 
                 Apolice obj = new Apolice();
 
-                obj.id = reader.GetInt32(0);
-                obj.dtInicio = reader.GetDateTime(1);
+                obj.Id = reader.GetInt32(0);
+                obj.DtInicio = reader.GetDateTime(1);
                 obj.dtFim = reader.GetDateTime(2);
                 obj.valorFranquia = reader.GetDecimal(3);
                 obj.valorPremio = reader.GetDecimal(4);
@@ -64,15 +64,15 @@ namespace Services
             cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
                                  "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
 
             SqlDataReader reader = banco.Pesquisar(cmd);
             reader.Read();
 
             Apolice obj = new Apolice();
 
-            obj.id = reader.GetInt32(0);
-            obj.dtInicio = reader.GetDateTime(1);
+            obj.Id = reader.GetInt32(0);
+            obj.DtInicio = reader.GetDateTime(1);
             obj.dtFim = reader.GetDateTime(2);
             obj.valorFranquia = reader.GetDecimal(3);
             obj.valorPremio = reader.GetDecimal(4);
@@ -89,7 +89,7 @@ namespace Services
 
 
             cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.carro.id));
-            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.DtInicio));
             cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
             cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
             cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
@@ -105,8 +105,8 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE apolice SET dt_inicio = @dt_inicio, dt_fim = @dt_fim, vl_franquia = @vl_franquia, vl_premio = @vl_premio " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.id));            
-            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.dtInicio));
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));            
+            cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.DtInicio));
             cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.dtFim));
             cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.valorFranquia));
             cmd.Parameters.Add(new SqlParameter("@vl_premio", objEntrada.valorPremio));
