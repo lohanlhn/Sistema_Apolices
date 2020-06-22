@@ -31,12 +31,6 @@ namespace Sistema_Apolices
             //Atualiza datagrid
             AtualizarDgv();
 
-            //Caso não possua registros o alterar fica desabilitado
-            if (dgvCarros.RowCount == 0)
-            {
-                btnAlterar.Enabled = false;
-            }
-
         }
 
         private void AtualizarDgv()
@@ -64,6 +58,7 @@ namespace Sistema_Apolices
             }
         }
 
+        //Chama a janela de inserção de veiculos
         private void btnNovoVeiculo_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +77,7 @@ namespace Sistema_Apolices
 
         }
 
+        //Chama a janela de alteração de veiculos
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             try
@@ -104,6 +100,7 @@ namespace Sistema_Apolices
 
         }
 
+        //Esconde o form atual e abre o de Apolices
         private void btnApolices_Click(object sender, EventArgs e)
         {
             Carro carro = new Carro();
@@ -121,6 +118,7 @@ namespace Sistema_Apolices
             novoForm.Show();
         }
 
+        //Checa o datagrid para exibir ou não o botão de alteração
         private void ChecarDataGrid()
         {
             if (dgvCarros.RowCount == 0)

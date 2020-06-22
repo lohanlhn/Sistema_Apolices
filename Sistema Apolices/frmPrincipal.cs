@@ -37,21 +37,26 @@ namespace Sistema_Apolices
             novoForm.Show();
         }
 
+
+        //Abre o form da lista de veiuculos
         private void btnVeículos_Click(object sender, EventArgs e)
         {
             abrirNovoForm(new frmListaDeVeiculos());
         }
 
+        //Abre o form da lista de marcas
         private void btnMarcas_Click(object sender, EventArgs e)
         {
             abrirNovoForm(new frmListaDeMarcas());
         }
 
+        //Abre o form da lista de modelos
         private void btnModelos_Click(object sender, EventArgs e)
         {
             abrirNovoForm(new frmListaDeModelos());
         }
 
+        //Fecha o form que estiver aberto
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if(_formAtivo != null)
