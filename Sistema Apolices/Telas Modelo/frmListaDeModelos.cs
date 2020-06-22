@@ -15,10 +15,8 @@ namespace Sistema_Apolices
 {
     public partial class frmListaDeModelos : Form
     {
-
-        bool _alterar;
         public frmListaDeModelos()
-        {
+        {        
             InitializeComponent();
 
             #region Carrega datagrid
@@ -43,13 +41,13 @@ namespace Sistema_Apolices
                 Modelo modelo = new Modelo();
                 modelo.Marca = new Marca();
 
-                List <Modelo> modelos;
-                
+                List<Modelo> modelos;
+
                 modelos = new ModeloController().Listar(modelo);
                 dgvModelos.Rows.Clear();
                 foreach (Modelo item in modelos)
                 {
-                    dgvModelos.Rows.Add(item.Id.ToString(), item.Marca.Id.ToString(),item.Marca.Nome, item.Nome);
+                    dgvModelos.Rows.Add(item.Id.ToString(), item.Marca.Id.ToString(), item.Marca.Nome, item.Nome);
                 }
 
                 ChecarDataGrid();
