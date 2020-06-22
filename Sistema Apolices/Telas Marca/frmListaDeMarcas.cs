@@ -16,7 +16,7 @@ namespace Sistema_Apolices
     public partial class frmListaDeMarcas : Form
     {
 
-        bool _alterar;
+        bool alterar;
 
         public frmListaDeMarcas()
         {

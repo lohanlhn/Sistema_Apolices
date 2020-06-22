@@ -16,7 +16,7 @@ namespace Sistema_Apolices
     public partial class frmListaDeModelos : Form
     {
 
-        bool _alterar;
+        bool alterar;
         public frmListaDeModelos()
         {
             InitializeComponent();

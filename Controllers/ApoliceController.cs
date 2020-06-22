@@ -34,7 +34,7 @@ namespace Controllers
         }
         void Consistir(Apolice objEntrada)
         {
-            if (objEntrada.DtInicio > objEntrada.dtFim)
+            if (objEntrada.dtInicio > objEntrada.dtFim)
             {
                 throw new ConsistenciaException("Por favor, Início da vigência deve ser menor que o campo Fim da vigência");
             }
