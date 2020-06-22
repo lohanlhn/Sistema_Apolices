@@ -45,8 +45,8 @@ namespace Sistema_Apolices
 
                     #region Carrega textBoxs
                     txtChassi.Text = _carro.Chassi;
-                    txtPlaca.Text = _carro.Placa;
-                    txtRenavam.Text = _carro.Renavam;
+                    mtxPlaca.Text = _carro.Placa;
+                    txtRenavam.Text = _carro.Renavam;                    
                     #endregion
 
                 }
@@ -143,7 +143,7 @@ namespace Sistema_Apolices
                 carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
             }
             carroAlterado.Chassi = txtChassi.Text;
-            carroAlterado.Placa = txtPlaca.Text;
+            carroAlterado.Placa = mtxPlaca.Text.ToUpper();
             carroAlterado.Renavam = txtRenavam.Text;
 
             new CarroController().Alterar(carroAlterado);
@@ -165,7 +165,7 @@ namespace Sistema_Apolices
             }
 
             carro.Chassi = txtChassi.Text;
-            carro.Placa = txtPlaca.Text;
+            carro.Placa = mtxPlaca.Text.ToUpper();
             carro.Renavam = txtRenavam.Text;
 
             new CarroController().Inserir(carro);

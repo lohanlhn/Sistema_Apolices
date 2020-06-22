@@ -34,12 +34,12 @@
             this.lblChassi = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
-            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.txtRenavam = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.mtxPlaca = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -64,7 +64,7 @@
             // txtChassi
             // 
             this.txtChassi.Location = new System.Drawing.Point(15, 102);
-            this.txtChassi.MaxLength = 20;
+            this.txtChassi.MaxLength = 17;
             this.txtChassi.Name = "txtChassi";
             this.txtChassi.Size = new System.Drawing.Size(140, 20);
             this.txtChassi.TabIndex = 19;
@@ -95,14 +95,6 @@
             this.lblModelo.Size = new System.Drawing.Size(42, 13);
             this.lblModelo.TabIndex = 16;
             this.lblModelo.Text = "Modelo";
-            // 
-            // txtPlaca
-            // 
-            this.txtPlaca.Location = new System.Drawing.Point(168, 27);
-            this.txtPlaca.MaxLength = 7;
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(156, 20);
-            this.txtPlaca.TabIndex = 15;
             // 
             // cmbModelo
             // 
@@ -136,7 +128,7 @@
             // txtRenavam
             // 
             this.txtRenavam.Location = new System.Drawing.Point(168, 66);
-            this.txtRenavam.MaxLength = 20;
+            this.txtRenavam.MaxLength = 11;
             this.txtRenavam.Name = "txtRenavam";
             this.txtRenavam.Size = new System.Drawing.Size(156, 20);
             this.txtRenavam.TabIndex = 23;
@@ -151,12 +143,21 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // mtxPlaca
+            // 
+            this.mtxPlaca.Location = new System.Drawing.Point(168, 25);
+            this.mtxPlaca.Mask = "LLL0A00";
+            this.mtxPlaca.Name = "mtxPlaca";
+            this.mtxPlaca.Size = new System.Drawing.Size(156, 20);
+            this.mtxPlaca.TabIndex = 25;
+            // 
             // frmIncluirAlterarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 138);
             this.ControlBox = false;
+            this.Controls.Add(this.mtxPlaca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtRenavam);
             this.Controls.Add(this.btnSalvar);
@@ -165,7 +166,6 @@
             this.Controls.Add(this.lblChassi);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblModelo);
-            this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cmbMarca);
@@ -187,11 +187,11 @@
         private System.Windows.Forms.Label lblChassi;
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.Label lblModelo;
-        private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.ComboBox cmbModelo;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.TextBox txtRenavam;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.MaskedTextBox mtxPlaca;
     }
 }

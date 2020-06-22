@@ -51,6 +51,10 @@ namespace Controllers
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Placa");
             }
+            if(objEntrada.Placa.Length < 7)
+            {
+                throw new ConsistenciaException("Por favor, preencha o campo Placa completamente");
+            }
             if (String.IsNullOrEmpty(objEntrada.Renavam))
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Renavam");
