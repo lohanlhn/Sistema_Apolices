@@ -16,8 +16,8 @@ namespace Sistema_Apolices
     public partial class frmIncluirAlterarApolice : Form
     {
 
-        Apolice apolice = new Apolice();
-        Carro carro = new Carro();
+        Apolice _apolice = new Apolice();
+        Carro _carro = new Carro();
         public frmIncluirAlterarApolice(Apolice apoliceSelecioanda, Carro carroSelecionado)
         {
             InitializeComponent();
@@ -26,12 +26,12 @@ namespace Sistema_Apolices
             {
                 if(apoliceSelecioanda.Id != 0)
                 {
-                    apolice = new ApoliceController().Selecionar(apoliceSelecioanda);
+                    _apolice = new ApoliceController().Selecionar(apoliceSelecioanda);
 
-                    dtpInicioVigencia.Value = apolice.DtInicio;
-                    dtpFimVigencia.Value = apolice.DtFim;
-                    txtVlFranquia.Text = apolice.ValorFranquia.ToString();
-                    txtVlPremio.Text = apolice.ValorPremio.ToString();
+                    dtpInicioVigencia.Value = _apolice.DtInicio;
+                    dtpFimVigencia.Value = _apolice.DtFim;
+                    txtVlFranquia.Text = _apolice.ValorFranquia.ToString();
+                    txtVlPremio.Text = _apolice.ValorPremio.ToString();
                     Text = "Alterar Apolice";
                 }
                 else
@@ -39,7 +39,7 @@ namespace Sistema_Apolices
                     dtpFimVigencia.Value = DateTime.Today;
                     dtpInicioVigencia.Value = DateTime.Today;
 
-                    carro = carroSelecionado;
+                    _carro = carroSelecionado;
                     Text = "Nova Apolice";
                 }
                 
@@ -56,26 +56,26 @@ namespace Sistema_Apolices
         {
             try
             {
-                if(apolice.Id != 0)
+                if(_apolice.Id != 0)
                 {
-                    apolice.DtFim = dtpFimVigencia.Value;
-                    apolice.DtInicio = dtpInicioVigencia.Value;
+                    _apolice.DtFim = dtpFimVigencia.Value;
+                    _apolice.DtInicio = dtpInicioVigencia.Value;
                     if (!string.IsNullOrEmpty(txtVlFranquia.Text))
                     {
-                        apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
+                        _apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
                     }
                     if (!string.IsNullOrEmpty(txtVlPremio.Text))
                     {
-                        apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
+                        _apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
                     }
-                    new ApoliceController().Alterar(apolice);
+                    new ApoliceController().Alterar(_apolice);
                 }
                 else
                 {
                     Apolice apolice = new Apolice();
                     apolice.Carro = new Carro();
 
-                    apolice.Carro.Id = carro.Id;
+                    apolice.Carro.Id = _carro.Id;
                     apolice.DtFim = dtpFimVigencia.Value;
                     apolice.DtInicio = dtpInicioVigencia.Value;
                     if (!string.IsNullOrEmpty(txtVlFranquia.Text))

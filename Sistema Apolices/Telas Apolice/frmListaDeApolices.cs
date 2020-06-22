@@ -15,18 +15,18 @@ namespace Sistema_Apolices
 {
     public partial class frmListaDeApolices : Form
     {
-        Carro carro = new Carro();
+        Carro _carro = new Carro();
         public frmListaDeApolices(Carro carroSelecionado)
         {
             InitializeComponent();
             try
             {
-                carro = new CarroController().Selecionar(carroSelecionado);
+                _carro = new CarroController().Selecionar(carroSelecionado);
 
-                lblCodigo.Text = carro.Id.ToString();
-                lblModelo.Text = carro.Modelo.Nome;
-                lblMarca.Text = carro.Modelo.Marca.Nome;
-                lblPlaca.Text = carro.Placa;
+                lblCodigo.Text = _carro.Id.ToString();
+                lblModelo.Text = _carro.Modelo.Nome;
+                lblMarca.Text = _carro.Modelo.Marca.Nome;
+                lblPlaca.Text = _carro.Placa;
 
                 dgvApolices.ColumnCount = 5;
 
@@ -53,7 +53,7 @@ namespace Sistema_Apolices
                 Apolice apolice = new Apolice();
                 apolice.Carro = new Carro();
 
-                apolice.Carro.Id = carro.Id;
+                apolice.Carro.Id = _carro.Id;
 
                 List<Apolice> apolices;
                 apolices = new ApoliceController().Listar(apolice);
@@ -85,7 +85,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(new Apolice(), carro);
+                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(new Apolice(), _carro);
 
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
