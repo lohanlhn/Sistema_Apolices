@@ -15,12 +15,14 @@ namespace Sistema_Apolices
 {
     public partial class frmIncluirAlterarVeiculo : Form
     {
-        private Carro _carro = new Carro();        
+        private Carro _carro = new Carro();
         public frmIncluirAlterarVeiculo(Carro carroSelecionado)
         {
             InitializeComponent();
             try
-            {                                
+            {
+                //Verifica se for recebido o id de um carro
+                //Para diferenciar entre uma inserção e uma alteração
                 if (carroSelecionado.Id != 0)
                 {
                     Text = "Alterar Veiculo";
@@ -46,7 +48,7 @@ namespace Sistema_Apolices
                     #region Carrega textBoxs
                     txtChassi.Text = _carro.Chassi;
                     mtxPlaca.Text = _carro.Placa;
-                    txtRenavam.Text = _carro.Renavam;                    
+                    txtRenavam.Text = _carro.Renavam;
                     #endregion
 
                 }
@@ -64,11 +66,12 @@ namespace Sistema_Apolices
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
-            
+
         }
 
+        //Carrega a combobox de modelos a cada marca selecioanda
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
@@ -133,7 +136,9 @@ namespace Sistema_Apolices
             carroAlterado.Modelo = new Modelo();
             carroAlterado.Modelo.Marca = new Marca();
 
+            //Pega o Id que as informações irão ser alteradas 
             carroAlterado.Id = _carro.Id;
+            
             if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
             {
                 carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
@@ -142,6 +147,7 @@ namespace Sistema_Apolices
             {
                 carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
             }
+
             carroAlterado.Chassi = txtChassi.Text;
             carroAlterado.Placa = mtxPlaca.Text.ToUpper();
             carroAlterado.Renavam = txtRenavam.Text;
