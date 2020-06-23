@@ -99,6 +99,7 @@ namespace Sistema_Apolices
         {
             try
             {
+                //Verifica se existe um carro
                 if (_carro.Id != 0)
                 {
                     AlterarVeiculo();
@@ -136,17 +137,11 @@ namespace Sistema_Apolices
             carroAlterado.Modelo = new Modelo();
             carroAlterado.Modelo.Marca = new Marca();
 
-            //Pega o Id que as informações irão ser alteradas 
+            //Pega o do Id que as informações irão ser alteradas 
             carroAlterado.Id = _carro.Id;
             
-            if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
-            {
-                carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
-            }
-            if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
-            {
-                carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
-            }
+            carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);            
+            carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
 
             carroAlterado.Chassi = txtChassi.Text;
             carroAlterado.Placa = mtxPlaca.Text.ToUpper();
@@ -161,14 +156,8 @@ namespace Sistema_Apolices
             carro.Modelo = new Modelo();
             carro.Modelo.Marca = new Marca();
 
-            if (!String.IsNullOrEmpty(Convert.ToString(cmbMarca.SelectedValue)))
-            {
-                carro.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
-            }
-            if (!String.IsNullOrEmpty(Convert.ToString(cmbModelo.SelectedValue)))
-            {
-                carro.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
-            }
+            carro.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
+            carro.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
 
             carro.Chassi = txtChassi.Text;
             carro.Placa = mtxPlaca.Text.ToUpper();

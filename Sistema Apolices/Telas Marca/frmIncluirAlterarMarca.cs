@@ -14,28 +14,24 @@ using Utils;
 namespace Sistema_Apolices
 {
     public partial class frmIncluirAlterarMarca : Form
-    {
-        bool _alterar;
+    {        
         Marca _marca = new Marca();
         public frmIncluirAlterarMarca(Marca marcaSelecionada)
         {
             InitializeComponent();
 
-            if (!String.IsNullOrEmpty(marcaSelecionada.Nome))
+            if (marcaSelecionada.Id != 0)
             {
                 lblAviso.Visible = true;
                 txtNvNome.Text = marcaSelecionada.Nome;
-
-                _alterar = true;
+                
                 _marca.Id = marcaSelecionada.Id;
 
                 Text = "Alterar Marca";
             }
             else
             {
-                lblAviso.Visible = false;
-
-                _alterar = false;
+                lblAviso.Visible = false;                
 
                 Text = "Nova Marca";
             }
@@ -44,7 +40,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                if (_alterar)
+                if (_marca.Id != 0)
                 {
                     Marca marca = new Marca();
                     marca.Id = _marca.Id;

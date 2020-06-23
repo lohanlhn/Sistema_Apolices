@@ -14,8 +14,7 @@ using Utils;
 namespace Sistema_Apolices
 {    
     public partial class frmIncluirAlterarModelo : Form
-    {
-        bool _alterar;
+    {        
         Modelo _modelo = new Modelo();
         public frmIncluirAlterarModelo(Modelo modeloSelecionado)
         {
@@ -27,16 +26,14 @@ namespace Sistema_Apolices
                 cmbMarca.DataSource = new MarcaController().Listar();
 
 
-                if (!String.IsNullOrEmpty(modeloSelecionado.Nome))
+                if (modeloSelecionado.Id != 0)
                 {
                     lblAviso.Visible = true;
 
                     cmbMarca.SelectedValue = modeloSelecionado.Marca.Id;                    
 
                     txtNvNome.Text = modeloSelecionado.Nome;
-
-
-                    _alterar = true;
+                    
                     _modelo.Id = modeloSelecionado.Id;
 
                     Text = "Alterar Marca";
@@ -44,9 +41,7 @@ namespace Sistema_Apolices
                 else
                 {
                     lblAviso.Visible = false;
-                    cmbMarca.SelectedIndex = -1;
-
-                    _alterar = false;
+                    cmbMarca.SelectedIndex = -1;                    
 
                     Text = "Nova Marca";
                 }
@@ -63,7 +58,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                if (_alterar)
+                if (_modelo.Id != 0)
                 {
                     Modelo modelo = new Modelo();
                     modelo.Marca = new Marca();
@@ -71,7 +66,6 @@ namespace Sistema_Apolices
                     modelo.Id = _modelo.Id;
                     modelo.Nome = txtNvNome.Text;
                     modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
-
 
                     new ModeloController().Alterar(modelo);
                 }
@@ -82,7 +76,6 @@ namespace Sistema_Apolices
 
                     modelo.Nome = txtNvNome.Text;
                     modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
-
 
                     new ModeloController().Inserir(modelo);
                 }
