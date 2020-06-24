@@ -24,7 +24,7 @@ namespace Sistema_Apolices
 
             try
             {
-                if(apoliceSelecioanda.Id != 0)
+                if (apoliceSelecioanda.Id != 0)
                 {
                     _apolice = new ApoliceController().Selecionar(apoliceSelecioanda);
 
@@ -42,7 +42,7 @@ namespace Sistema_Apolices
                     _carro = carroSelecionado;
                     Text = "Nova Apolice";
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -56,18 +56,14 @@ namespace Sistema_Apolices
         {
             try
             {
-                if(_apolice.Id != 0)
+                if (_apolice.Id != 0)
                 {
                     _apolice.DtFim = dtpFimVigencia.Value;
                     _apolice.DtInicio = dtpInicioVigencia.Value;
-                    if (!string.IsNullOrEmpty(txtVlFranquia.Text))
-                    {
-                        _apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
-                    }
-                    if (!string.IsNullOrEmpty(txtVlPremio.Text))
-                    {
-                        _apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
-                    }
+
+                    _apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
+                    _apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
+
                     new ApoliceController().Alterar(_apolice);
                 }
                 else
@@ -78,14 +74,9 @@ namespace Sistema_Apolices
                     apolice.Carro.Id = _carro.Id;
                     apolice.DtFim = dtpFimVigencia.Value;
                     apolice.DtInicio = dtpInicioVigencia.Value;
-                    if (!string.IsNullOrEmpty(txtVlFranquia.Text))
-                    {
-                        apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
-                    }
-                    if (!string.IsNullOrEmpty(txtVlPremio.Text))
-                    {
-                        apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
-                    }
+
+                    apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
+                    apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
 
                     new ApoliceController().Inserir(apolice);
                 }

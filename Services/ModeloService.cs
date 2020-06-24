@@ -16,6 +16,7 @@ namespace Services
             ConexaoBanco banco = new ConexaoBanco();
             SqlDataReader reader;
             List<Modelo> lstRetorno = new List<Modelo>();
+            
             if (objEntrada.Marca.Id > 0)
             {
                 cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
