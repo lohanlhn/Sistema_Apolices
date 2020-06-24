@@ -14,9 +14,7 @@ using Utils;
 namespace Sistema_Apolices
 {
     public partial class frmListaDeMarcas : Form
-    {
-
-        bool _alterar;
+    {        
 
         public frmListaDeMarcas()
         {
