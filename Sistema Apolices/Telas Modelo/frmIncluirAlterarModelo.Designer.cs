@@ -31,7 +31,6 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.lblNvNome = new System.Windows.Forms.Label();
-            this.lblAviso = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtNvNome = new System.Windows.Forms.TextBox();
@@ -63,16 +62,6 @@
             this.lblNvNome.Size = new System.Drawing.Size(65, 13);
             this.lblNvNome.TabIndex = 36;
             this.lblNvNome.Text = "Novo nome:";
-            // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.ForeColor = System.Drawing.Color.Red;
-            this.lblAviso.Location = new System.Drawing.Point(12, 9);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(310, 13);
-            this.lblAviso.TabIndex = 35;
-            this.lblAviso.Text = "*Os Modelos continuaram ligados a Marca depois de sua edição";
             // 
             // btnCancelar
             // 
@@ -113,7 +102,6 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.lblNvNome);
-            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNvNome);
@@ -131,7 +119,6 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.Label lblNvNome;
-        private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtNvNome;

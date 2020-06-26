@@ -27,9 +27,7 @@ namespace Sistema_Apolices
 
 
                 if (modeloSelecionado.Id != 0)
-                {
-                    lblAviso.Visible = true;
-
+                {                    
                     cmbMarca.SelectedValue = modeloSelecionado.Marca.Id;                    
 
                     txtNvNome.Text = modeloSelecionado.Nome;
@@ -39,8 +37,7 @@ namespace Sistema_Apolices
                     Text = "Alterar Marca";
                 }
                 else
-                {
-                    lblAviso.Visible = false;
+                {                    
                     cmbMarca.SelectedIndex = -1;                    
 
                     Text = "Nova Marca";
