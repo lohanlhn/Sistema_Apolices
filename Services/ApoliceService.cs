@@ -11,19 +11,12 @@ namespace Services
     public class ApoliceService
     {
         public List<Apolice> Listar(Apolice objEntrada)
-        {
-            SqlCommand cmd = new SqlCommand();
-            if (objEntrada.Carro.Id > 0)
-            {
-                cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
-                                     "WHERE carro_id = @carro_id");
+        {            
 
-                cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.Carro.Id));
-            }
-            else
-            {
-                cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice");                                          
-            }
+            SqlCommand cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
+                                            "WHERE carro_id = @carro_id");
+
+            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.Carro.Id));
 
             ConexaoBanco banco = new ConexaoBanco();
 
@@ -105,7 +98,7 @@ namespace Services
             SqlCommand cmd = new SqlCommand("UPDATE apolice SET dt_inicio = @dt_inicio, dt_fim = @dt_fim, vl_franquia = @vl_franquia, vl_premio = @vl_premio " +
                                             "WHERE id = @id");
 
-            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));            
+            cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
             cmd.Parameters.Add(new SqlParameter("@dt_inicio", objEntrada.DtInicio));
             cmd.Parameters.Add(new SqlParameter("@dt_fim", objEntrada.DtFim));
             cmd.Parameters.Add(new SqlParameter("@vl_franquia", objEntrada.ValorFranquia));

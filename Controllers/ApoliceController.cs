@@ -34,17 +34,21 @@ namespace Controllers
         }
         void Consistir(Apolice objEntrada)
         {
-            if (objEntrada.DtInicio > objEntrada.DtFim)
+            if (objEntrada.DtInicio >= objEntrada.DtFim)
             {
                 throw new ConsistenciaException("Por favor, Início da vigência deve ser menor que o campo Fim da vigência");
             }
             if(objEntrada.ValorFranquia == 0)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Valor da Franquia com valor maior que zero");
+                throw new ConsistenciaException("Por favor, preencha o campo Valor da Franquia");
             }
             if (objEntrada.ValorPremio == 0)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Valor da Prêmio com valor maior que zero");
+                throw new ConsistenciaException("Por favor, preencha o campo Valor da Prêmio");
+            }
+            if(objEntrada.ValorPremio <= objEntrada.ValorFranquia)
+            {
+                throw new ConsistenciaException("O valor do prêmio deve ser maior que o valor da franquia");
             }
         }
     }

@@ -30,16 +30,16 @@
         {
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblRenavam = new System.Windows.Forms.Label();
-            this.txtChassi = new System.Windows.Forms.TextBox();
             this.lblChassi = new System.Windows.Forms.Label();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
             this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.txtRenavam = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.mtxPlaca = new System.Windows.Forms.MaskedTextBox();
+            this.mtxChassi = new System.Windows.Forms.MaskedTextBox();
+            this.mtxRenavam = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -47,7 +47,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(249, 102);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -60,14 +60,6 @@
             this.lblRenavam.Size = new System.Drawing.Size(53, 13);
             this.lblRenavam.TabIndex = 20;
             this.lblRenavam.Text = "Renavam";
-            // 
-            // txtChassi
-            // 
-            this.txtChassi.Location = new System.Drawing.Point(15, 102);
-            this.txtChassi.MaxLength = 17;
-            this.txtChassi.Name = "txtChassi";
-            this.txtChassi.Size = new System.Drawing.Size(140, 20);
-            this.txtChassi.TabIndex = 19;
             // 
             // lblChassi
             // 
@@ -104,7 +96,7 @@
             this.cmbModelo.Location = new System.Drawing.Point(15, 65);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(121, 21);
-            this.cmbModelo.TabIndex = 14;
+            this.cmbModelo.TabIndex = 2;
             // 
             // lblMarca
             // 
@@ -122,23 +114,15 @@
             this.cmbMarca.Location = new System.Drawing.Point(15, 25);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(121, 21);
-            this.cmbMarca.TabIndex = 12;
+            this.cmbMarca.TabIndex = 1;
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
-            // 
-            // txtRenavam
-            // 
-            this.txtRenavam.Location = new System.Drawing.Point(168, 66);
-            this.txtRenavam.MaxLength = 11;
-            this.txtRenavam.Name = "txtRenavam";
-            this.txtRenavam.Size = new System.Drawing.Size(156, 20);
-            this.txtRenavam.TabIndex = 23;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(168, 102);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -149,7 +133,23 @@
             this.mtxPlaca.Mask = "LLL0A00";
             this.mtxPlaca.Name = "mtxPlaca";
             this.mtxPlaca.Size = new System.Drawing.Size(156, 20);
-            this.mtxPlaca.TabIndex = 25;
+            this.mtxPlaca.TabIndex = 4;
+            // 
+            // mtxChassi
+            // 
+            this.mtxChassi.Location = new System.Drawing.Point(15, 102);
+            this.mtxChassi.Mask = "AAAAAAAAAAAAAAAAA";
+            this.mtxChassi.Name = "mtxChassi";
+            this.mtxChassi.Size = new System.Drawing.Size(121, 20);
+            this.mtxChassi.TabIndex = 3;
+            // 
+            // mtxRenavam
+            // 
+            this.mtxRenavam.Location = new System.Drawing.Point(168, 65);
+            this.mtxRenavam.Mask = "AAAAAAAAAAA";
+            this.mtxRenavam.Name = "mtxRenavam";
+            this.mtxRenavam.Size = new System.Drawing.Size(156, 20);
+            this.mtxRenavam.TabIndex = 5;
             // 
             // frmIncluirAlterarVeiculo
             // 
@@ -157,12 +157,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 138);
             this.ControlBox = false;
+            this.Controls.Add(this.mtxRenavam);
+            this.Controls.Add(this.mtxChassi);
             this.Controls.Add(this.mtxPlaca);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtRenavam);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblRenavam);
-            this.Controls.Add(this.txtChassi);
             this.Controls.Add(this.lblChassi);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblModelo);
@@ -173,7 +173,7 @@
             this.MaximizeBox = false;
             this.Name = "frmIncluirAlterarVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Alterar Veiculo";
+            this.Text = "frmIncluirAlterarVeiculo";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,15 +183,15 @@
 
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblRenavam;
-        private System.Windows.Forms.TextBox txtChassi;
         private System.Windows.Forms.Label lblChassi;
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.ComboBox cmbModelo;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cmbMarca;
-        private System.Windows.Forms.TextBox txtRenavam;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.MaskedTextBox mtxPlaca;
+        private System.Windows.Forms.MaskedTextBox mtxChassi;
+        private System.Windows.Forms.MaskedTextBox mtxRenavam;
     }
 }

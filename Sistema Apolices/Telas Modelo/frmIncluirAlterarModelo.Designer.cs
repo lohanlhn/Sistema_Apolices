@@ -52,7 +52,7 @@
             this.cmbMarca.Location = new System.Drawing.Point(15, 38);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(130, 21);
-            this.cmbMarca.TabIndex = 37;
+            this.cmbMarca.TabIndex = 1;
             // 
             // lblNvNome
             // 
@@ -69,7 +69,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(162, 102);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 34;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -80,7 +80,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(243, 102);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 33;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -91,7 +91,7 @@
             this.txtNvNome.MaxLength = 100;
             this.txtNvNome.Name = "txtNvNome";
             this.txtNvNome.Size = new System.Drawing.Size(130, 20);
-            this.txtNvNome.TabIndex = 32;
+            this.txtNvNome.TabIndex = 2;
             // 
             // frmIncluirAlterarModelo
             // 

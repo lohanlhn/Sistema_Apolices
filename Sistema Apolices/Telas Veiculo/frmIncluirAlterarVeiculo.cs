@@ -15,17 +15,20 @@ namespace Sistema_Apolices
 {
     public partial class frmIncluirAlterarVeiculo : Form
     {
+        //Campo
         private Carro _carro = new Carro();
+
+        #region Construtor
         public frmIncluirAlterarVeiculo(Carro carroSelecionado)
         {
             InitializeComponent();
             try
             {
-                //Verifica se for recebido o id de um carro
-                //Para diferenciar entre uma inserção e uma alteração
+                //Alteração
                 if (carroSelecionado.Id != 0)
                 {
                     Text = "Alterar Veiculo";
+                    //Campo _carro recebe os dados do carroSelecioando para a alteraçao do registro
                     _carro = new CarroController().Selecionar(carroSelecionado);
 
                     #region Popula Comboboxs
@@ -46,12 +49,13 @@ namespace Sistema_Apolices
                     #endregion
 
                     #region Carrega textBoxs
-                    txtChassi.Text = _carro.Chassi;
+                    mtxChassi.Text = _carro.Chassi;
                     mtxPlaca.Text = _carro.Placa;
-                    txtRenavam.Text = _carro.Renavam;
+                    mtxRenavam.Text = _carro.Renavam;
                     #endregion
 
                 }
+                //Inserção
                 else
                 {
                     Text = "Novo Veiculo";
@@ -70,6 +74,9 @@ namespace Sistema_Apolices
             }
 
         }
+        #endregion
+
+        #region Eventos
 
         //Carrega a combobox de modelos a cada marca selecioanda
         private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
@@ -99,7 +106,6 @@ namespace Sistema_Apolices
         {
             try
             {
-                //Verifica se existe um carro
                 if (_carro.Id != 0)
                 {
                     AlterarVeiculo();
@@ -130,22 +136,24 @@ namespace Sistema_Apolices
         {
             Close();
         }
+        #endregion
 
+        #region Métodos
         private void AlterarVeiculo()
         {
             Carro carroAlterado = new Carro();
             carroAlterado.Modelo = new Modelo();
             carroAlterado.Modelo.Marca = new Marca();
 
-            //Pega o do Id que as informações irão ser alteradas 
+            //Pega o do Id do carro que vai ter as informções alterardas 
             carroAlterado.Id = _carro.Id;
-            
-            carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);            
+
+            carroAlterado.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
             carroAlterado.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
 
-            carroAlterado.Chassi = txtChassi.Text;
+            carroAlterado.Chassi = mtxChassi.Text.ToUpper();
             carroAlterado.Placa = mtxPlaca.Text.ToUpper();
-            carroAlterado.Renavam = txtRenavam.Text;
+            carroAlterado.Renavam = mtxRenavam.Text.ToUpper();
 
             new CarroController().Alterar(carroAlterado);
         }
@@ -159,11 +167,13 @@ namespace Sistema_Apolices
             carro.Modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
             carro.Modelo.Id = Convert.ToInt32(cmbModelo.SelectedValue);
 
-            carro.Chassi = txtChassi.Text;
+            carro.Chassi = mtxChassi.Text.ToUpper();
             carro.Placa = mtxPlaca.Text.ToUpper();
-            carro.Renavam = txtRenavam.Text;
+            carro.Renavam = mtxRenavam.Text.ToUpper();
 
             new CarroController().Inserir(carro);
         }
+        #endregion
+
     }
 }

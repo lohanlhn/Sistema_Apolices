@@ -28,7 +28,7 @@ namespace Controllers
         }
         void Consistir(Modelo objEntrada)
         {            
-            if (string.IsNullOrEmpty(objEntrada.Nome))
+            if (string.IsNullOrWhiteSpace(objEntrada.Nome))
             {
                 throw new ConsistenciaException("Por favor, preencha o nome do modelo");
             }

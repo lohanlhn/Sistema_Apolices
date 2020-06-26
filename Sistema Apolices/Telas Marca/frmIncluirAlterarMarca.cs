@@ -15,20 +15,27 @@ namespace Sistema_Apolices
 {
     public partial class frmIncluirAlterarMarca : Form
     {        
-        Marca _marca = new Marca();
+        //Campo
+        Marca _marca = new Marca();        
+
+        #region Construtor
+
         public frmIncluirAlterarMarca(Marca marcaSelecionada)
         {
             InitializeComponent();
 
+            //Alteração
             if (marcaSelecionada.Id != 0)
             {
                 lblAviso.Visible = true;
                 txtNvNome.Text = marcaSelecionada.Nome;
                 
+                //Campo _marca recebe o id da marca selecionada para realizar a alteraçao do registro
                 _marca.Id = marcaSelecionada.Id;
 
                 Text = "Alterar Marca";
             }
+            //Inserção
             else
             {
                 lblAviso.Visible = false;                
@@ -36,24 +43,22 @@ namespace Sistema_Apolices
                 Text = "Nova Marca";
             }
         }
+
+        #endregion
+
+        #region Eventos
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (_marca.Id != 0)
                 {
-                    Marca marca = new Marca();
-                    marca.Id = _marca.Id;
-                    marca.Nome = txtNvNome.Text;
-
-                    new MarcaController().Alterar(marca);
+                    AlterarMarca();
                 }
                 else
                 {
-                    Marca marca = new Marca();
-                    marca.Nome = txtNvNome.Text;
-
-                    new MarcaController().Inserir(marca);
+                    InserirMarca();
                 }
 
                 MessageBox.Show("Operação realizada com sucesso");
@@ -76,5 +81,29 @@ namespace Sistema_Apolices
         {
             Close();
         }
+
+        #endregion
+
+        #region Métodos
+
+        private void InserirMarca()
+        {
+            Marca marca = new Marca();
+            marca.Nome = txtNvNome.Text.ToUpper();
+
+            new MarcaController().Inserir(marca);
+        }
+
+        private void AlterarMarca()
+        {
+            Marca marca = new Marca();
+            marca.Id = _marca.Id;
+            marca.Nome = txtNvNome.Text.ToUpper();
+
+            new MarcaController().Alterar(marca);
+        }
+
+        #endregion
+
     }
 }

@@ -12,17 +12,55 @@ namespace Sistema_Apolices
 {
     public partial class frmPrincipal : Form
     {
+        //Campo
         private Form _formAtivo = null;
+
+        #region Contrutor
 
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
+        #endregion
 
-        //Fecha o form aberto e abre o novo
-        public void abrirNovoForm(Form novoForm)
-        {            
+        #region Eventos
+
+        //Abre o form da lista de veiuculos
+        private void btnVeículos_Click(object sender, EventArgs e)
+        {
+            AbrirNovoForm(new frmListaDeVeiculos());
+        }
+
+        //Abre o form da lista de marcas
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            AbrirNovoForm(new frmListaDeMarcas());
+        }
+
+        //Abre o form da lista de modelos
+        private void btnModelos_Click(object sender, EventArgs e)
+        {
+            AbrirNovoForm(new frmListaDeModelos());
+        }
+
+        //Fecha o form que estiver aberto
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (_formAtivo != null)
+            {
+                _formAtivo.Close();
+            }
+
+        }
+
+        #endregion
+
+        #region Métodos
+
+        //Fecha o form aberto caso exista e abre o novo
+        public void AbrirNovoForm(Form novoForm)
+        {
             if (_formAtivo != null)
             {
                 _formAtivo.Close();
@@ -37,34 +75,7 @@ namespace Sistema_Apolices
             novoForm.Show();
         }
 
-
-        //Abre o form da lista de veiuculos
-        private void btnVeículos_Click(object sender, EventArgs e)
-        {
-            abrirNovoForm(new frmListaDeVeiculos());
-        }
-
-        //Abre o form da lista de marcas
-        private void btnMarcas_Click(object sender, EventArgs e)
-        {
-            abrirNovoForm(new frmListaDeMarcas());
-        }
-
-        //Abre o form da lista de modelos
-        private void btnModelos_Click(object sender, EventArgs e)
-        {
-            abrirNovoForm(new frmListaDeModelos());
-        }
-
-        //Fecha o form que estiver aberto
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if(_formAtivo != null)
-            {
-                _formAtivo.Close();
-            }
-            
-        }
+        #endregion
 
     }
 }

@@ -43,21 +43,17 @@ namespace Controllers
             {
                 throw new ConsistenciaException("Por favor, selecione um modelo");
             }
-            if (String.IsNullOrEmpty(objEntrada.Chassi))
+            if(objEntrada.Chassi.Trim().Length < 17)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Chassi");
+                throw new ConsistenciaException("Por favor, preencha o campo Chassi completamente");
             }
-            if (String.IsNullOrEmpty(objEntrada.Placa))
+            if (objEntrada.Renavam.Trim().Length < 11)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Placa");
+                throw new ConsistenciaException("Por favor, preencha o campo Renavam completamente");
             }
-            if(objEntrada.Placa.Length < 7)
+            if(objEntrada.Placa.Trim().Length < 7)
             {
                 throw new ConsistenciaException("Por favor, preencha o campo Placa completamente");
-            }
-            if (String.IsNullOrEmpty(objEntrada.Renavam))
-            {
-                throw new ConsistenciaException("Por favor, preencha o campo Renavam");
             }
         }
     }

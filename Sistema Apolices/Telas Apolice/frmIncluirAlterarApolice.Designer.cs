@@ -46,7 +46,8 @@
             this.txtVlFranquia.MaxLength = 20;
             this.txtVlFranquia.Name = "txtVlFranquia";
             this.txtVlFranquia.Size = new System.Drawing.Size(89, 20);
-            this.txtVlFranquia.TabIndex = 55;
+            this.txtVlFranquia.TabIndex = 3;
+            this.txtVlFranquia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVlFranquia_KeyPress);
             // 
             // dtpFimVigencia
             // 
@@ -54,7 +55,7 @@
             this.dtpFimVigencia.Location = new System.Drawing.Point(129, 26);
             this.dtpFimVigencia.Name = "dtpFimVigencia";
             this.dtpFimVigencia.Size = new System.Drawing.Size(89, 20);
-            this.dtpFimVigencia.TabIndex = 54;
+            this.dtpFimVigencia.TabIndex = 2;
             // 
             // lblFimVigencia
             // 
@@ -71,7 +72,7 @@
             this.dtpInicioVigencia.Location = new System.Drawing.Point(15, 26);
             this.dtpInicioVigencia.Name = "dtpInicioVigencia";
             this.dtpInicioVigencia.Size = new System.Drawing.Size(89, 20);
-            this.dtpInicioVigencia.TabIndex = 52;
+            this.dtpInicioVigencia.TabIndex = 1;
             this.dtpInicioVigencia.Value = new System.DateTime(2020, 6, 12, 0, 0, 0, 0);
             // 
             // txtVlPremio
@@ -80,7 +81,8 @@
             this.txtVlPremio.MaxLength = 20;
             this.txtVlPremio.Name = "txtVlPremio";
             this.txtVlPremio.Size = new System.Drawing.Size(89, 20);
-            this.txtVlPremio.TabIndex = 51;
+            this.txtVlPremio.TabIndex = 4;
+            this.txtVlPremio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVlPremio_KeyPress);
             // 
             // lblVlPremio
             // 
@@ -114,7 +116,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(62, 103);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -124,7 +126,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(143, 103);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 46;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -150,7 +152,7 @@
             this.MinimizeBox = false;
             this.Name = "frmIncluirAlterarApolice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Alterar Apolice";
+            this.Text = "frmIncluirAlterarApolice";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,7 @@ namespace Services
             SqlDataReader reader;
             List<Modelo> lstRetorno = new List<Modelo>();
             
+            //Usado para popular combobox, filtrando por marca selecionada
             if (objEntrada.Marca.Id > 0)
             {
                 cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
@@ -40,6 +41,7 @@ namespace Services
 
                 }
             }
+            //Usado para popular datagrid, trazendo todos os registros
             else
             {
                 cmd = new SqlCommand("SELECT modelo.id, marca.id, marca.nome, modelo.nome FROM modelo " +

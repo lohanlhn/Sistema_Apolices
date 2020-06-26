@@ -15,7 +15,10 @@ namespace Sistema_Apolices
 {
     public partial class frmListaDeApolices : Form
     {
+        //Campo
         Carro _carro = new Carro();
+        #region Construtor
+
         public frmListaDeApolices(Carro carroSelecionado)
         {
             InitializeComponent();
@@ -45,6 +48,63 @@ namespace Sistema_Apolices
                 MessageBox.Show(ex.Message);
             }
         }
+
+        #endregion
+
+        #region Eventos
+
+        private void btnNovaApolice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Apolice apolice = new Apolice();
+                apolice.Carro = new Carro();
+
+                apolice.Carro.Id = _carro.Id;
+
+                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice);
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    AtualizarDgv();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Apolice apolice = new Apolice();
+
+                apolice.Id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
+
+                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice);
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    AtualizarDgv();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
+
+        #region Métodos
 
         private void AtualizarDgv()
         {
@@ -76,64 +136,19 @@ namespace Sistema_Apolices
             }
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnNovaApolice_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(new Apolice(), _carro);
-
-                if (janela.ShowDialog() == DialogResult.OK)
-                {
-                    AtualizarDgv();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Apolice apolice = new Apolice();
-
-                apolice.Id = Convert.ToInt32(dgvApolices.SelectedRows[0].Cells[0].Value);
-
-                frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice, new Carro());
-
-                if (janela.ShowDialog() == DialogResult.OK)
-                {
-                    AtualizarDgv();
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
         private void ChecarDataGrid()
         {
             if (dgvApolices.RowCount == 0)
             {
                 btnAlterar.Visible = false;
-                btnAlterar.Enabled = false;
             }
             else
             {
                 btnAlterar.Visible = true;
-                btnAlterar.Enabled = true;
             }
         }
+
+        #endregion
+
     }
 }

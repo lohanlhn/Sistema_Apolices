@@ -15,11 +15,11 @@ namespace Sistema_Apolices
 {
     public partial class frmListaDeModelos : Form
     {
-        public frmListaDeModelos()
-        {        
-            InitializeComponent();
+        #region Contrutor
 
-            #region Carrega datagrid
+        public frmListaDeModelos()
+        {
+            InitializeComponent();
 
             dgvModelos.ColumnCount = 4;
 
@@ -27,38 +27,16 @@ namespace Sistema_Apolices
             dgvModelos.Columns[2].Name = "Marca";
             dgvModelos.Columns[3].Name = "Modelo";
 
+            //Usado para passar o id da marca para o próximo form
             dgvModelos.Columns[1].Visible = false;
-
 
             AtualizarDgv();
 
-            #endregion
         }
-        private void AtualizarDgv()
-        {
-            try
-            {
-                Modelo modelo = new Modelo();
-                modelo.Marca = new Marca();
 
-                List<Modelo> modelos;
+        #endregion
 
-                modelos = new ModeloController().Listar(modelo);
-                dgvModelos.Rows.Clear();
-                foreach (Modelo item in modelos)
-                {
-                    dgvModelos.Rows.Add(item.Id.ToString(), item.Marca.Id.ToString(), item.Marca.Nome, item.Nome);
-                }
-
-                ChecarDataGrid();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
+        #region Eventos
 
         private void btnNovoModelo_Click(object sender, EventArgs e)
         {
@@ -86,6 +64,7 @@ namespace Sistema_Apolices
                 Modelo modelo = new Modelo();
                 modelo.Marca = new Marca();
 
+                //Prepara o objeto para ser enviado para tela de alteração
                 modelo.Id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[0].Value);
                 modelo.Marca.Id = Convert.ToInt32(dgvModelos.SelectedRows[0].Cells[1].Value);
                 modelo.Nome = dgvModelos.SelectedRows[0].Cells[3].Value.ToString();
@@ -104,18 +83,51 @@ namespace Sistema_Apolices
             }
 
         }
+
+        #endregion
+
+        #region Métodos
+
+        private void AtualizarDgv()
+        {
+            try
+            {
+                Modelo modelo = new Modelo();
+                modelo.Marca = new Marca();
+
+                List<Modelo> modelos = new ModeloController().Listar(modelo);
+
+                dgvModelos.Rows.Clear();
+
+                foreach (Modelo item in modelos)
+                {
+                    dgvModelos.Rows.Add(item.Id.ToString(), item.Marca.Id.ToString(), item.Marca.Nome, item.Nome);
+                }
+
+                ChecarDataGrid();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
         private void ChecarDataGrid()
         {
             if (dgvModelos.RowCount == 0)
             {
                 btnAlterar.Visible = false;
-                btnAlterar.Enabled = false;
             }
             else
             {
                 btnAlterar.Visible = true;
-                btnAlterar.Enabled = true;
             }
         }
+
+        #endregion
+
     }
 }
