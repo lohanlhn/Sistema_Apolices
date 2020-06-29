@@ -49,37 +49,16 @@ namespace Services
             return lstRetorno;
 
         }
-
-        public void Inserir(Carro objEntrada)
-        {
-            SqlCommand cmd = new SqlCommand("INSERT INTO carro(modelo_id, chassi, placa, renavam) " +
-                                            "VALUES (@modelo_id, @chassi, @placa, @renavam)");
-            
-
-            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.Modelo.Id));
-            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.Chassi));
-            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.Placa));
-            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.Renavam));
-
-            ConexaoBanco banco = new ConexaoBanco();
-
-            banco.AbrirConexao();
-            banco.Executar(cmd);
-            banco.FecharConexao();            
-        }
-
         public Carro Selecionar(Carro objEntrada)
         {
-            SqlCommand cmd;
+            SqlCommand cmd = new SqlCommand("SELECT carro.id, modelo.id, modelo.nome, marca.id, marca.nome, chassi, placa, renavam FROM carro " +
+                                            "INNER JOIN modelo on modelo.id = carro.modelo_id " +
+                                            "INNER JOIN marca on marca.id = modelo.marca_id " +
+                                            "WHERE carro.id = @id");
 
             ConexaoBanco banco = new ConexaoBanco();
 
-            banco.AbrirConexao();
-
-            cmd = new SqlCommand("SELECT carro.id, modelo.id, modelo.nome, marca.id, marca.nome, chassi, placa, renavam FROM carro " +
-                                 "INNER JOIN modelo on modelo.id = carro.modelo_id " +
-                                 "INNER JOIN marca on marca.id = modelo.marca_id " +
-                                 "WHERE carro.id = @id");
+            banco.AbrirConexao();            
 
             cmd.Parameters.Add(new SqlParameter("@id", objEntrada.Id));
 
@@ -104,7 +83,23 @@ namespace Services
 
             return obj;
         }
+        public void Inserir(Carro objEntrada)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO carro(modelo_id, chassi, placa, renavam) " +
+                                            "VALUES (@modelo_id, @chassi, @placa, @renavam)");
+            
 
+            cmd.Parameters.Add(new SqlParameter("@modelo_id", objEntrada.Modelo.Id));
+            cmd.Parameters.Add(new SqlParameter("@chassi", objEntrada.Chassi));
+            cmd.Parameters.Add(new SqlParameter("@placa", objEntrada.Placa));
+            cmd.Parameters.Add(new SqlParameter("@renavam", objEntrada.Renavam));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            banco.Executar(cmd);
+            banco.FecharConexao();            
+        }
         public void Alterar(Carro objEntrada)
         {
             SqlCommand cmd = new SqlCommand("UPDATE carro SET modelo_id = @modelo_id, chassi = @chassi, placa = @placa, renavam = @renavam " +

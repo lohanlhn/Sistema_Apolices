@@ -20,13 +20,11 @@ namespace Controllers
             Consistir(objEntrada);
             new MarcaService().Inserir(objEntrada);
         }
-
         public void Alterar(Marca objEntrada)
         {
             Consistir(objEntrada);
             new MarcaService().Alterar(objEntrada);
         }
-
         void Consistir(Marca objEntrada)
         {
             if (string.IsNullOrWhiteSpace(objEntrada.Nome))

@@ -11,22 +11,19 @@ namespace Controllers
 {
     public class ApoliceController
     {
-        public List<Apolice> Listar(Apolice objEntrada)
+        public List<Apolice> ListarPorCarroId(int carroId)
         {
-            return new ApoliceService().Listar(objEntrada);
+            return new ApoliceService().ListarPorCarroId(carroId);
         }
-
         public Apolice Selecionar(Apolice objEntrada)
         {
             return new ApoliceService().Selecionar(objEntrada);
         }
-
         public void Inserir(Apolice objEntrada)
         {
             Consistir(objEntrada);
             new ApoliceService().Inserir(objEntrada);
         }
-
         public void Alterar(Apolice objEntrada)
         {
             Consistir(objEntrada);

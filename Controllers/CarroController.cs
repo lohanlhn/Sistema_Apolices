@@ -15,24 +15,20 @@ namespace Controllers
         {
             return new CarroService().Listar();
         }
-
+        public Carro Selecionar(Carro objEntrada)
+        {
+            return new CarroService().Selecionar(objEntrada);
+        }
         public void Inserir(Carro objEntrada)
         {
             Consistir(objEntrada);
             new CarroService().Inserir(objEntrada);
         }
-
-        public Carro Selecionar(Carro objEntrada)
-        {
-            return new CarroService().Selecionar(objEntrada);
-        }
-
         public void Alterar(Carro objEntrada)
         {
             Consistir(objEntrada);
             new CarroService().Alterar(objEntrada);
         }
-
         void Consistir(Carro objEntrada)
         {
             if (objEntrada.Modelo.Marca.Id <= 0)

@@ -41,8 +41,8 @@ create table apolice
 	carro_id int foreign key references carro(id) not null,
 	dt_inicio date not null,
 	dt_fim date not null,
-	vl_franquia decimal not null,
-	vl_premio decimal not null
+	vl_franquia decimal(12,2) not null,
+	vl_premio decimal(12,2) not null
 )
 
 insert into marca(nome) values 

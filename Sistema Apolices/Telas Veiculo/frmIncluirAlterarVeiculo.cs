@@ -38,13 +38,9 @@ namespace Sistema_Apolices
                     cmbMarca.DataSource = new MarcaController().Listar();
                     cmbMarca.SelectedValue = _carro.Modelo.Marca.Id;
 
-                    Modelo modelo = new Modelo();
-                    modelo.Marca = new Marca();
-                    modelo.Marca.Id = _carro.Modelo.Marca.Id;
-
                     cmbModelo.ValueMember = "id";
                     cmbModelo.DisplayMember = "nome";
-                    cmbModelo.DataSource = new ModeloController().Listar(modelo);
+                    cmbModelo.DataSource = new ModeloController().ListarPorMarcaId(_carro.Modelo.Marca.Id);
                     cmbModelo.SelectedValue = _carro.Modelo.Id;
                     #endregion
 
@@ -83,13 +79,12 @@ namespace Sistema_Apolices
         {
             try
             {
-                Modelo modelo = new Modelo();
-                modelo.Marca = new Marca();
-                modelo.Marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
+                Marca marca = new Marca();
+                marca.Id = Convert.ToInt32(cmbMarca.SelectedValue);
 
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
-                cmbModelo.DataSource = new ModeloController().Listar(modelo);
+                cmbModelo.DataSource = new ModeloController().ListarPorMarcaId(marca.Id);
 
                 cmbModelo.Text = "";
                 cmbModelo.SelectedIndex = -1;

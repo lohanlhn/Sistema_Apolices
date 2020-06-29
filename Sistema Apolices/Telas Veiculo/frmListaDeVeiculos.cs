@@ -91,7 +91,7 @@ namespace Sistema_Apolices
             novoForm.FormBorderStyle = FormBorderStyle.None;
             novoForm.Dock = DockStyle.Fill;
             panel1.Controls.Add(novoForm);
-            panel1.Tag = novoForm;
+            panel1.Tag = novoForm;            
             novoForm.BringToFront();
             novoForm.Show();
         }
@@ -104,8 +104,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                List<Carro> carros;
-                carros = new CarroController().Listar();
+                List<Carro> carros = new CarroController().Listar();
 
                 //Limpa datagrid
                 dgvCarros.Rows.Clear();

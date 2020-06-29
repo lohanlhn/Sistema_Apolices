@@ -59,7 +59,8 @@ namespace Sistema_Apolices
             {
                 Apolice apolice = new Apolice();
                 apolice.Carro = new Carro();
-
+                
+                //carro que vai ter a apolice inserida
                 apolice.Carro.Id = _carro.Id;
 
                 frmIncluirAlterarApolice janela = new frmIncluirAlterarApolice(apolice);
@@ -110,13 +111,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                Apolice apolice = new Apolice();
-                apolice.Carro = new Carro();
-
-                apolice.Carro.Id = _carro.Id;
-
-                List<Apolice> apolices;
-                apolices = new ApoliceController().Listar(apolice);
+                List<Apolice> apolices = new ApoliceController().ListarPorCarroId(_carro.Id);
 
                 //Limpa datagrid
                 dgvApolices.Rows.Clear();

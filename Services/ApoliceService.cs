@@ -10,13 +10,13 @@ namespace Services
 {
     public class ApoliceService
     {
-        public List<Apolice> Listar(Apolice objEntrada)
+        public List<Apolice> ListarPorCarroId(int carroId)
         {            
 
             SqlCommand cmd = new SqlCommand("SELECT id, dt_inicio, dt_fim, vl_franquia, vl_premio from apolice " +
                                             "WHERE carro_id = @carro_id");
 
-            cmd.Parameters.Add(new SqlParameter("@carro_id", objEntrada.Carro.Id));
+            cmd.Parameters.Add(new SqlParameter("@carro_id", carroId));
 
             ConexaoBanco banco = new ConexaoBanco();
 

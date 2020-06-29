@@ -11,16 +11,19 @@ namespace Controllers
 {
     public class ModeloController
     {
-        public List<Modelo> Listar(Modelo objEntrada)
+        public List<Modelo> Listar()
         {
-            return new ModeloService().Listar(objEntrada);
+            return new ModeloService().Listar();
+        }
+        public List<Modelo> ListarPorMarcaId(int marcaId)
+        {
+            return new ModeloService().ListarPorMarcaId(marcaId);
         }
         public void Inserir(Modelo objEntrada)
         {
             Consistir(objEntrada);
             new ModeloService().Inserir(objEntrada);
         }
-
         public void Alterar(Modelo objEntrada)
         {
             Consistir(objEntrada);

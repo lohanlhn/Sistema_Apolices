@@ -45,6 +45,7 @@ namespace Sistema_Apolices
                     dtpInicioVigencia.Value = DateTime.Today;
 
                     _apolice.Carro = new Carro();
+                    //Pega o id do carro que vai ter uma apolice inserida
                     _apolice.Carro.Id = apoliceSelecioanda.Carro.Id;
 
                     Text = "Nova Apolice";
@@ -92,7 +93,9 @@ namespace Sistema_Apolices
 
         }
 
-        //Usado para permitir apenas numeros e virgula na text box
+        #region Permitir apenas numeros e virgula nas textBoxs
+
+        //txtVlFranquia
         private void txtVlFranquia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
@@ -103,7 +106,7 @@ namespace Sistema_Apolices
                 //Verifica se já existe alguma vírgula na string
                 if (txtVlFranquia.Text.Contains(","))
                 {
-                    e.Handled = true; 
+                    e.Handled = true;
                 }
             }
 
@@ -120,7 +123,7 @@ namespace Sistema_Apolices
             }
         }
 
-        //Usado para permitir apenas numeros e virgula na text box
+        //txtVlPremio
         private void txtVlPremio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
@@ -148,6 +151,9 @@ namespace Sistema_Apolices
             }
         }
 
+        #endregion
+
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -162,7 +168,10 @@ namespace Sistema_Apolices
             Apolice apolice = new Apolice();
             apolice.Carro = new Carro();
 
+            //Carro que vai ter a apolice inserida
             apolice.Carro.Id = _apolice.Carro.Id;
+
+            #region Prepara a apolice a ser inserida
 
             apolice.DtFim = dtpFimVigencia.Value;
             apolice.DtInicio = dtpInicioVigencia.Value;
@@ -185,13 +194,17 @@ namespace Sistema_Apolices
             {
                 apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
             }
-            
+
+            #endregion
+
             new ApoliceController().Inserir(apolice);
         }
 
         private void AlterarApolice()
         {
             Apolice apolice = new Apolice();
+
+            #region Prepara a apolice a ser inserida
 
             apolice.DtFim = dtpFimVigencia.Value;
             apolice.DtInicio = dtpInicioVigencia.Value;
@@ -214,6 +227,8 @@ namespace Sistema_Apolices
             {
                 apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
             }
+
+            #endregion
 
             new ApoliceController().Alterar(apolice);
         }

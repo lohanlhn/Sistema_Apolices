@@ -40,7 +40,6 @@ namespace Services
             return lstRetorno;
 
         }
-
         public void Inserir(Marca objEntrada)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO marca(nome) " +

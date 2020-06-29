@@ -10,70 +10,73 @@ namespace Services
 {
     public class ModeloService
     {
-        public List<Modelo> Listar(Modelo objEntrada)
+        public List<Modelo> Listar()
         {
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand("SELECT modelo.id, marca.id, marca.nome, modelo.nome FROM modelo " +
+                                            "INNER JOIN marca on marca.id = modelo.marca_id");
+
+
             ConexaoBanco banco = new ConexaoBanco();
-            SqlDataReader reader;
+
+            banco.AbrirConexao();
+            SqlDataReader reader = banco.Pesquisar(cmd);
+
             List<Modelo> lstRetorno = new List<Modelo>();
-            
-            //Usado para popular combobox, filtrando por marca selecionada
-            if (objEntrada.Marca.Id > 0)
+
+            while (reader.Read())
             {
-                cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
 
-                cmd.Parameters.Add(new SqlParameter("@marca_id", objEntrada.Marca.Id));
+                Modelo obj = new Modelo();
+                obj.Marca = new Marca();
 
-                banco.AbrirConexao();
-                reader = banco.Pesquisar(cmd);
+                obj.Id = reader.GetInt32(0);
+                obj.Marca.Id = reader.GetInt32(1);
+                obj.Marca.Nome = reader.GetString(2);
+                obj.Nome = reader.GetString(3);
 
-                while (reader.Read())
-                {
+                lstRetorno.Add(obj);
 
-                    Modelo obj = new Modelo();
-                    obj.Marca = new Marca();
-
-                    obj.Id = reader.GetInt32(0);
-                    obj.Marca.Id = reader.GetInt32(1);
-                    obj.Nome = reader.GetString(2);
-
-                    lstRetorno.Add(obj);
-
-                }
             }
-            //Usado para popular datagrid, trazendo todos os registros
-            else
-            {
-                cmd = new SqlCommand("SELECT modelo.id, marca.id, marca.nome, modelo.nome FROM modelo " +
-                                     "INNER JOIN marca on marca.id = modelo.marca_id");
 
-                banco.AbrirConexao();
-                reader = banco.Pesquisar(cmd);
-
-                while (reader.Read())
-                {
-
-                    Modelo obj = new Modelo();
-                    obj.Marca = new Marca();
-
-                    obj.Id = reader.GetInt32(0);
-                    obj.Marca.Id = reader.GetInt32(1);
-                    obj.Marca.Nome = reader.GetString(2);
-                    obj.Nome = reader.GetString(3);
-
-                    lstRetorno.Add(obj);
-
-                }
-            }
-            
-            
             reader.Close();
             banco.FecharConexao();
 
             return lstRetorno;
 
         }
+        public List<Modelo> ListarPorMarcaId(int marcaId)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT id, marca_id, nome FROM modelo WHERE marca_id = @marca_id");
 
+            cmd.Parameters.Add(new SqlParameter("@marca_id", marcaId));
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            banco.AbrirConexao();
+            SqlDataReader reader = banco.Pesquisar(cmd);
+
+            List<Modelo> lstRetorno = new List<Modelo>();            
+            
+
+            while (reader.Read())
+            {
+
+                Modelo obj = new Modelo();
+                obj.Marca = new Marca();
+
+                obj.Id = reader.GetInt32(0);
+                obj.Marca.Id = reader.GetInt32(1);
+                obj.Nome = reader.GetString(2);
+
+                lstRetorno.Add(obj);
+
+            }
+
+            reader.Close();
+            banco.FecharConexao();
+
+            return lstRetorno;
+        }       
         public void Inserir(Modelo objEntrada)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO modelo(nome, marca_id) " +

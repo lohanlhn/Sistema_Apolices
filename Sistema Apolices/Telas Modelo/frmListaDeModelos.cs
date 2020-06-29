@@ -92,10 +92,7 @@ namespace Sistema_Apolices
         {
             try
             {
-                Modelo modelo = new Modelo();
-                modelo.Marca = new Marca();
-
-                List<Modelo> modelos = new ModeloController().Listar(modelo);
+                List<Modelo> modelos = new ModeloController().Listar();
 
                 dgvModelos.Rows.Clear();
 

@@ -86,7 +86,7 @@ namespace Sistema_Apolices
             {
                 List<Marca> marcas = new MarcaController().Listar();
 
-                dgvMarcas.Rows.Clear();
+                dgvMarcas.Rows.Clear();                
 
                 foreach (Marca item in marcas)
                 {
