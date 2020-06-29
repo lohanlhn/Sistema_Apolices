@@ -37,11 +37,11 @@ namespace Controllers
             }
             if(objEntrada.ValorFranquia == 0)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Valor da Franquia");
+                throw new ConsistenciaException("Por favor, preencha o campo Valor da Franquia de forma correta");
             }
             if (objEntrada.ValorPremio == 0)
             {
-                throw new ConsistenciaException("Por favor, preencha o campo Valor da Prêmio");
+                throw new ConsistenciaException("Por favor, preencha o campo Valor da Prêmio de forma correta");
             }
             if(objEntrada.ValorPremio <= objEntrada.ValorFranquia)
             {

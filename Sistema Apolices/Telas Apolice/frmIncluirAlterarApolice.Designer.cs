@@ -46,8 +46,7 @@
             this.txtVlFranquia.MaxLength = 20;
             this.txtVlFranquia.Name = "txtVlFranquia";
             this.txtVlFranquia.Size = new System.Drawing.Size(89, 20);
-            this.txtVlFranquia.TabIndex = 3;
-            this.txtVlFranquia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVlFranquia_KeyPress);
+            this.txtVlFranquia.TabIndex = 3;            
             // 
             // dtpFimVigencia
             // 
@@ -81,8 +80,7 @@
             this.txtVlPremio.MaxLength = 20;
             this.txtVlPremio.Name = "txtVlPremio";
             this.txtVlPremio.Size = new System.Drawing.Size(89, 20);
-            this.txtVlPremio.TabIndex = 4;
-            this.txtVlPremio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVlPremio_KeyPress);
+            this.txtVlPremio.TabIndex = 4;            
             // 
             // lblVlPremio
             // 

@@ -62,7 +62,7 @@ namespace Sistema_Apolices
             {
                 Carro carro = new Carro();
                 carro.Id = int.Parse(dgvCarros.SelectedRows[0].Cells[0].Value.ToString());
-
+                
                 frmIncluirAlterarVeiculo janela = new frmIncluirAlterarVeiculo(carro);
                 if (janela.ShowDialog() == DialogResult.OK)
                 {
@@ -82,7 +82,7 @@ namespace Sistema_Apolices
         {
             Carro carro = new Carro();
 
-            carro.Id = carro.Id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);
+            carro.Id = Convert.ToInt32(dgvCarros.SelectedRows[0].Cells[0].Value);
 
             frmListaDeApolices novoForm = new frmListaDeApolices(carro);
 

@@ -93,67 +93,6 @@ namespace Sistema_Apolices
 
         }
 
-        #region Permitir apenas numeros e virgula nas textBoxs
-
-        //txtVlFranquia
-        private void txtVlFranquia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
-            {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-
-                //Verifica se já existe alguma vírgula na string
-                if (txtVlFranquia.Text.Contains(","))
-                {
-                    e.Handled = true;
-                }
-            }
-
-            //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-
-            //Limita para ter 2 numeros após a virgula
-            else if (txtVlFranquia.Text.Contains(",") && txtVlFranquia.Text.Split(',')[1].Length > 1 && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-        }
-
-        //txtVlPremio
-        private void txtVlPremio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
-            {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-
-                //Verifica se já existe alguma vírgula na string
-                if (txtVlPremio.Text.Contains(","))
-                {
-                    e.Handled = true; // Caso exista, aborte 
-                }
-            }
-
-            //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-
-            //Limita para ter 2 numeros após a virgula
-            else if (txtVlPremio.Text.Contains(",") && txtVlPremio.Text.Split(',')[1].Length > 1 && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-        }
-
-        #endregion
-
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -204,6 +143,8 @@ namespace Sistema_Apolices
         {
             Apolice apolice = new Apolice();
 
+            apolice.Id = _apolice.Id;
+
             #region Prepara a apolice a ser inserida
 
             apolice.DtFim = dtpFimVigencia.Value;
@@ -216,7 +157,7 @@ namespace Sistema_Apolices
             }
             else
             {
-                _apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
+                apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
             }
             //Caso text box esteja vazia recebe valor recebe 0
             if (string.IsNullOrWhiteSpace(txtVlPremio.Text))

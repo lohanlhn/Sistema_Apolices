@@ -85,8 +85,7 @@ namespace Sistema_Apolices
                 cmbModelo.ValueMember = "id";
                 cmbModelo.DisplayMember = "nome";
                 cmbModelo.DataSource = new ModeloController().ListarPorMarcaId(marca.Id);
-
-                cmbModelo.Text = "";
+                
                 cmbModelo.SelectedIndex = -1;
             }
             catch (Exception ex)
