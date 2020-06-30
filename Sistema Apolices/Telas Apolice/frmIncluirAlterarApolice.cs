@@ -103,7 +103,7 @@ namespace Sistema_Apolices
         #region Métodos
 
         private void InserirApolice()
-        {
+        {           
             Apolice apolice = new Apolice();
             apolice.Carro = new Carro();
 
@@ -115,24 +115,10 @@ namespace Sistema_Apolices
             apolice.DtFim = dtpFimVigencia.Value;
             apolice.DtInicio = dtpInicioVigencia.Value;
 
-            //Caso text box esteja vazia recebe valor recebe 0
-            if (string.IsNullOrWhiteSpace(txtVlFranquia.Text))
-            {
-                apolice.ValorFranquia = 0;
-            }
-            else
-            {
-                apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
-            }
-            //Caso text box esteja vazia recebe valor recebe 0
-            if (string.IsNullOrWhiteSpace(txtVlPremio.Text))
-            {
-                apolice.ValorPremio = 0;
-            }
-            else
-            {
-                apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
-            }
+            decimal.TryParse(txtVlFranquia.Text, out decimal valorFranquia);
+            decimal.TryParse(txtVlPremio.Text, out decimal valorPremio);
+            apolice.ValorFranquia = valorFranquia;
+            apolice.ValorPremio = valorPremio;            
 
             #endregion
 
@@ -150,24 +136,10 @@ namespace Sistema_Apolices
             apolice.DtFim = dtpFimVigencia.Value;
             apolice.DtInicio = dtpInicioVigencia.Value;
 
-            //Caso text box esteja vazia recebe valor recebe 0
-            if (string.IsNullOrWhiteSpace(txtVlFranquia.Text))
-            {
-                apolice.ValorFranquia = 0;
-            }
-            else
-            {
-                apolice.ValorFranquia = Convert.ToDecimal(txtVlFranquia.Text);
-            }
-            //Caso text box esteja vazia recebe valor recebe 0
-            if (string.IsNullOrWhiteSpace(txtVlPremio.Text))
-            {
-                apolice.ValorPremio = 0;
-            }
-            else
-            {
-                apolice.ValorPremio = Convert.ToDecimal(txtVlPremio.Text);
-            }
+            decimal.TryParse(txtVlFranquia.Text, out decimal valorFranquia);
+            decimal.TryParse(txtVlPremio.Text, out decimal valorPremio);
+            apolice.ValorFranquia = valorFranquia;
+            apolice.ValorPremio = valorPremio;
 
             #endregion
 
