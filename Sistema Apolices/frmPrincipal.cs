@@ -29,29 +29,60 @@ namespace Sistema_Apolices
         //Abre o form da lista de veiuculos
         private void btnVeículos_Click(object sender, EventArgs e)
         {
-            AbrirNovoForm(new frmListaDeVeiculos());
+            try
+            {
+                AbrirNovoForm(new frmListaDeVeiculos());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         //Abre o form da lista de marcas
         private void btnMarcas_Click(object sender, EventArgs e)
         {
-            AbrirNovoForm(new frmListaDeMarcas());
+            try
+            {
+                AbrirNovoForm(new frmListaDeMarcas());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         //Abre o form da lista de modelos
         private void btnModelos_Click(object sender, EventArgs e)
         {
-            AbrirNovoForm(new frmListaDeModelos());
+            try
+            {
+                AbrirNovoForm(new frmListaDeModelos());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         //Fecha o form que estiver aberto
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (_formAtivo != null)
+            try
             {
-                _formAtivo.Close();
+                if (_formAtivo != null)
+                {
+                    _formAtivo.Close();
+                }
             }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
